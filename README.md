@@ -1,4 +1,6 @@
-#
+# Summary of Important AI & ML Blog Posts
+* NOTE: 본 내용은 다음의 기준으로 선별된 것입니다.
+
 ## 1. Research
 ### 1.1. CV
 * [Autoencoders and Diffusers: A Brief Comparison (Dec 2022)](https://eugeneyan.com//writing/autoencoders-vs-diffusers/)
