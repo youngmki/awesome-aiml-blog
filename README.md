@@ -32,7 +32,7 @@
 ## 2. Business Cases and Implementations
 ### 2.1. CV
 * [When a Picture is Worth More Than Words (Dec 2022, Airbnb)](https://medium.com/airbnb-engineering/when-a-picture-is-worth-more-than-words-17718860dcc2): ① 미적 점수 레이블링과 예측 ② 자가 학습으로 이미지 임베딩 생성 → HNSW로 유사 이미지 검색 지원
-* [AI 명함 촬영 인식 '리오(RIO)' 적용기 - ML Model Converter와 안드로이드 앱 적용기 (Nov 2022, 드라마앤컴퍼니)](https://blog.dramancompany.com/2022/11/ai-%eb%aa%85%ed%95%a8%ec%b4%ac%ec%98%81%ec%9d%b8%ec%8b%9d-%eb%a6%ac%ec%98%a4-%ec%a0%81%ec%9a%a9%ea%b8%b0-2%eb%b6%80-ml-model-converter%ec%99%80-%ec%95%88%eb%93%9c%eb%a1%9c%ec%9d%b4%eb%93%9c/): PyTorch 모델 → ONNX 그래프 → TF 모델 → TF Lite 모델 변환으로 온-디바이스 추론 구현
+* [AI 명함 촬영 인식 '리오(RIO)' 적용기 - ML Model Converter와 안드로이드 앱 적용기 (Nov 2022, 드라마앤컴퍼니)](https://blog.dramancompany.com/2022/11/ai-%eb%aa%85%ed%95%a8%ec%b4%ac%ec%98%81%ec%9d%b8%ec%8b%9d-%eb%a6%ac%ec%98%a4-%ec%a0%81%ec%9a%a9%ea%b8%b0-2%eb%b6%80-ml-model-converter%ec%99%80-%ec%95%88%eb%93%9c%eb%a1%9c%ec%9d%b4%eb%93%9c/): PyTorch 모델 → ONNX 그래프 → TF 모델 → TF Lite 모델 변환으로 온-디바이스 추론 구현  
 명함 인식 위한 인스턴스 세그멘테이션 → OpenCV 후처리 과정을 다룬 [1편](https://blog.dramancompany.com/2022/11/ai-%eb%aa%85%ed%95%a8-%ec%b4%ac%ec%98%81-%ec%9d%b8%ec%8b%9d-%eb%a6%ac%ec%98%a4rio-%ec%a0%81%ec%9a%a9%ea%b8%b0-1%eb%b6%80-%eb%aa%85%ed%95%a8%ec%b4%ac%ec%98%81%ec%9d%b8%ec%8b%9d-%ec%9c%84%ed%95%9c-ins/)도 읽어보세요.
 * [For Your Eyes Only: Improving Netflix Video Quality with Neural Networks (Nov 2022, Netflix)](https://netflixtechblog.com/for-your-eyes-only-improving-netflix-video-quality-with-neural-networks-5b8d032da09c)
 * [Match Cutting at Netflix: Finding Cuts with Smooth Visual Transitions (Nov 2022, Netflix)](https://netflixtechblog.com/match-cutting-at-netflix-finding-cuts-with-smooth-visual-transitions-31c3fc14ae59)
@@ -46,6 +46,12 @@
 
 ### 2.3. RecSys, etc.
 * [How to Evaluate the Quality of the Synthetic Data – Measuring from the Perspective of Fidelity, Utility, and Privacy (Dec 2022)](https://aws.amazon.com/blogs/machine-learning/how-to-evaluate-the-quality-of-the-synthetic-data-measuring-from-the-perspective-of-fidelity-utility-and-privacy/): [이전 글](https://aws.amazon.com/blogs/machine-learning/augment-fraud-transactions-using-synthetic-data-in-amazon-sagemaker/)도 읽어보세요. [ydata-synthetic](https://github.com/ydataai/ydata-synthetic) 라이브러리의 WGAN-GP로 태뷸러 데이터 합성 → 충실도(통계량), 유용성(예측 성능), 정보 보호(암기 X) 기준으로 평가
+* [그 많던 벡터는 다 어디로 갔을까? **Milvus** 활용기 (Nov 2022, 라이너)](https://blog.getliner.com/milvus-usage/)
+* [Building Airbnb Categories with ML and Human in the Loop (Nov 2022, Airbnb)](https://medium.com/airbnb-engineering/building-airbnb-categories-with-ml-and-human-in-the-loop-e97988e70ebb)
+* [Efficient Multi-Objective Neural Architecture Search with **Ax** (Nov 2022)](https://pytorch.org/blog/effective-multi-objective-nueral-architecture/): 다중 목표 NAS를 위한 Ax 사용 → Ax의 원격, 비동기식 실행 = 스케줄러(모델 전달, 지표 입수) + 최적화 알고리즘 (베이즈 최적화 등) + 외부 시행 평가, 조기 종료와 고차원 파라미터 탐색(SAASBO) 기능 사용 가능
+* [How Pinterest Leverages Realtime User Actions in Recommendation to Boost Homefeed Engagement Volume (Nov 2022, Pinterest)](https://medium.com/pinterest-engineering/how-pinterest-leverages-realtime-user-actions-in-recommendation-to-boost-homefeed-engagement-volume-165ae2e8cde8)
+* [How Prime Video Distills Time Series Anomalies into Actionable Alarms (Nov 2022, Amazon)](https://www.amazon.science/blog/how-prime-video-distills-time-series-anomalies-into-actionable-alarms)
+* [ML for Fraud Detection in Streaming Services (Nov 2022, Netflix)](https://netflixtechblog.com/machine-learning-for-fraud-detection-in-streaming-services-b0b4ef3be3f6)
 
 ### 2.4. Training, Inference and MLOps
 * [Automatically Retrain NNs with **Renate** (Dec 2022, Amazon)](https://aws.amazon.com/blogs/machine-learning/automatically-retrain-neural-networks-with-renate/): 신경망 자동 재학습을 위한 라이브러리, [Renate](https://renate.readthedocs.io/en/latest/) ← 재학습 시 과거 데이터에 대한 예측 성능 하락하는 '파국적 망각' 현상 방지, 지속적 학습에 대한 HPO와 클라우드 백엔드 학습 지원
@@ -53,6 +59,12 @@
 * [Introducing **Fortuna**: A Library for Uncertainty Quantification (Dec 2022, Amazon)](https://aws.amazon.com/blogs/machine-learning/introducing-fortuna-a-library-for-uncertainty-quantification/): 딥러닝의 과신 문제 ← [Fortuna](https://aws-fortuna.readthedocs.io/en/latest/), 불확실성 정량화 라이브러리 ① Flax 모델 ② 출력이나 불확실성 추정값에서 시작 가능
 * [ML 모델 서빙 비용 1/4로 줄이기 (Dec 2022, 하이퍼커넥트)](https://hyperconnect.github.io/2022/12/13/infra-cost-optimization-with-aws-inferentia.html): ① AWS Inferentia: EC2(inf1)로 출시된 AI 가속기(= ASIC), 4개의 NeuronCore v1 칩으로 구성 ② Neuron SDK로 모델 컴파일 → Triton 추론 서버로 Neuron 모델 배포 → Neuron Monitor로 모니터링 ③ 부하 테스트로 TPS, 레이턴시 측정 → 동일 레이턴시 하에 동일 TPS 될 때까지 Pod 늘리고 비용의 차이 비교 ④ 그 외: Neruon Batching와 NeuronCore Pipeline
 * [Ready-to-go Sample Data Pipelines with **Dataflow** (Dec 2022, Netflix)](https://netflixtechblog.com/ready-to-go-sample-data-pipelines-with-dataflow-17440a9e141d)
+* [전사 구성원들이 사용하는 배치 데이터 플랫폼 만들기 - **Airflow** Advanced (Nov 2022, 쏘카)](https://tech.socarcorp.kr/data/2022/11/09/advanced-airflow-for-databiz.html)
+* [쿠팡 로켓그로스의 ML 플랫폼: 20개 이상의 모델 서비스 및 트래픽 처리 비용 효율화 (Nov 2022, 쿠팡)](https://medium.com/coupang-engineering/%EC%BF%A0%ED%8C%A1-%EB%A1%9C%EC%BC%93%EA%B7%B8%EB%A1%9C%EC%8A%A4%EC%9D%98-ml-%ED%94%8C%EB%9E%AB%ED%8F%BC-20%EA%B0%9C-%EC%9D%B4%EC%83%81%EC%9D%98-%EB%AA%A8%EB%8D%B8-%EC%84%9C%EB%B9%84%EC%8A%A4-%EB%B0%8F-%ED%8A%B8%EB%9E%98%ED%94%BD-%EC%B2%98%EB%A6%AC-%EB%B9%84%EC%9A%A9-%ED%9A%A8%EC%9C%A8%ED%99%94-f8f362ea71fc): 카프카 개별 토픽으로 처리되던 ML 태스크들에 오케스트레이션 레이어 도입하기
+* [Accelerating Large *GPT* Training with Sparse Pre-Training and Dense Fine-Tuning (Nov 2022)](https://www.cerebras.net/blog/accelerating-large-gpt-training-with-sparse-pre-training-and-dense-fine-tuning/)
+* [Apache Beam으로 ML 데이터 파이프라인 구축하기 (Nov 2022, 스캐터랩)](https://tech.scatterlab.co.kr/apache-beam-3/): [1편](https://tech.scatterlab.co.kr/apache-beam-1/)과 [2편](https://tech.scatterlab.co.kr/apache-beam-2/)도 읽어보세요.
+* [CLOps - CLOps가 바꿔 놓은 CLOVA의 모델 상용화 프로세스 (Nov 2022, 네이버)](https://engineering.clova.ai/posts/2022/11/clops-summary-part5): ML 서빙 플랫폼 CLOps의 컴포넌트(인스턴스, 컨테이너, 모델 레지스트리) 개발하기. [1편](https://engineering.clova.ai/posts/2022/06/clops-beginning-of-clops), [2편](https://engineering.clova.ai/posts/2022/07/clops-the-heart-of-the-platform), [3편](https://engineering.clova.ai/posts/2022/09/clops-resource-management), [4편](https://engineering.clova.ai/posts/2022/10/clops-model-management)도 읽어보세요.
+* [Kurly만의 MLOps 구축하기 - KubeFlow 도입기 (Nov 2022, 컬리)](https://helloworld.kurly.com/blog/second-mlops/): 세이지메이커 vs. 쿠브플로우, 카펜터를 통한 쿠버네티스 GPU 노드 관리를 다룬 [1편](https://helloworld.kurly.com/blog/first-mlops/)도 읽어보세요.
 
 ## 3. AWS ML Only
 ### 3.3. RecSys, etc.
