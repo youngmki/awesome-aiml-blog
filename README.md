@@ -9,23 +9,39 @@
 ### 1.1. CV
 * [Autoencoders and Diffusers: A Brief Comparison (Dec 2022)](https://eugeneyan.com//writing/autoencoders-vs-diffusers/)
 * [*Data2vec 2.0*: Highly Efficient Self-Supervised Learning for Vision, Speech and Text (Dec 2022, Meta)](https://ai.facebook.com/blog/ai-self-supervised-learning-data2vec/)
+* [Text-to-Image: Diffusion, Text Conditioning, Guidance, Latent Space (Nov 2022)](https://eugeneyan.com//writing/text-to-image/)
 
 ### 1.2. NLP
 * [Accelerating Text Generation with Confident Adaptive Language Modeling (*CALM*) (Dec 2022, Google)](https://ai.googleblog.com/2022/12/accelerating-text-generation-with.html?m=1)
 * [Illustrating Reinforcement Learning from Human Feedback (RLHF) (Dec 2022, HuggingFace)](https://huggingface.co/blog/rlhf)
 ① 정책 언어 모델과 ② 프롬프트 별 생성 텍스트에 대해 사람의 선호도 점수로 학습한 보상 모델 이용하여 언어 모델 튜닝(= PPO)
+* [Better LMs without Massive Compute (Nov 2022, Google)](https://ai.googleblog.com/2022/11/better-language-models-without-massive.html)
+* [*ChatGPT*: Optimizing LMs for Dialogue (Nov 2022, OpenAI)](https://openai.com/blog/chatgpt/): GPT 3.5, 사람 피드백 기반의 강화 학습(RLHF)으로 파인 튜닝 → 편향과 유해성 제거
+* [Choosing the Right LM For Your NLP Use Case (Nov 2022)](https://www.topbots.com/choosing-the-right-language-model/)
+* [MoE with Expert Choice Routing (Nov 2022, Google)](
+* [Robots That Write Their Own Code (Nov 2022, Google)](https://ai.googleblog.com/2022/11/robots-that-write-their-own-code.html)
+* [The State of Multilingual AI (Nov 2002)](http://ruder.io/state-of-multilingual-ai/)
 
 ### 1.3. RecSys, etc.
 * [Mastering Stratego, the Classic Game of Imperfect Information (Dec 2022, DeepMind)](https://www.deepmind.com/blog/mastering-stratego-the-classic-game-of-imperfect-information)
 * [Research @ MS 2022: A Look Back at a Year of Accelerating Progress in AI (Dec 2022, Microsoft)](https://www.microsoft.com/en-us/research/blog/2022-a-look-back-at-a-year-of-accelerating-progress-in-ai/): 이미지 모델 [Swin Transformer v2](https://www.microsoft.com/en-us/research/blog/swin-transformer-supports-3-billion-parameter-vision-models-that-can-train-with-higher-resolution-images-for-greater-task-applicability), 챗봇을 위한 언어 모델 [GODEL](https://www.microsoft.com/en-us/research/blog/godel-combining-goal-oriented-dialog-with-real-world-conversations/), 멀티모달 [BEiT](https://github.com/microsoft/unilm/tree/master/beit), 언어 모델 디버깅 도구 [AdaTest](https://www.microsoft.com/en-us/research/blog/partnering-people-with-large-language-models-to-find-and-fix-bugs-in-nlp-systems/), 유해 콘텐츠 데이터 생성 도구 [ToxiGen](https://www.microsoft.com/en-us/research/blog/detoxigen-leveraging-large-language-models-to-build-more-robust-hate-speech-detection-tools/), NN HPO기법 [µTransfer](https://www.microsoft.com/en-us/research/blog/%c2%b5transfer-a-technique-for-hyperparameter-tuning-of-enormous-neural-networks/), 모델 압축과 양자화를 위한 [DeepSpeed Compression](https://www.microsoft.com/en-us/research/blog/deepspeed-compression-a-composable-library-for-extreme-compression-and-zero-cost-quantization/) 등
+* [Evolutionary-Scale Prediction of Atomic Level Protein Structure with a LM (Nov 2022, Meta)](https://ai.facebook.com/blog/protein-folding-esmfold-metagenomics/)
+* [Teaching AI Advanced Mathematical Reasoning (Nov 2022, Meta)](https://ai.facebook.com/blog/ai-math-theorem-proving/)
 
 ## 2. Business Cases and Implementations
 ### 2.1. CV
 * [When a Picture is Worth More Than Words (Dec 2022, Airbnb)](https://medium.com/airbnb-engineering/when-a-picture-is-worth-more-than-words-17718860dcc2): ① 미적 점수 레이블링과 예측 ② 자가 학습으로 이미지 임베딩 생성 → HNSW로 유사 이미지 검색 지원
+* [AI 명함 촬영 인식 '리오(RIO)' 적용기 - ML Model Converter와 안드로이드 앱 적용기 (Nov 2022, 드라마앤컴퍼니)](https://blog.dramancompany.com/2022/11/ai-%eb%aa%85%ed%95%a8%ec%b4%ac%ec%98%81%ec%9d%b8%ec%8b%9d-%eb%a6%ac%ec%98%a4-%ec%a0%81%ec%9a%a9%ea%b8%b0-2%eb%b6%80-ml-model-converter%ec%99%80-%ec%95%88%eb%93%9c%eb%a1%9c%ec%9d%b4%eb%93%9c/): PyTorch 모델 → ONNX 그래프 → TF 모델 → TF Lite 모델 변환으로 온-디바이스 추론 구현
+명함 인식 위한 인스턴스 세그멘테이션 → OpenCV 후처리 과정을 다룬 [1편](https://blog.dramancompany.com/2022/11/ai-%eb%aa%85%ed%95%a8-%ec%b4%ac%ec%98%81-%ec%9d%b8%ec%8b%9d-%eb%a6%ac%ec%98%a4rio-%ec%a0%81%ec%9a%a9%ea%b8%b0-1%eb%b6%80-%eb%aa%85%ed%95%a8%ec%b4%ac%ec%98%81%ec%9d%b8%ec%8b%9d-%ec%9c%84%ed%95%9c-ins/)도 읽어보세요.
+* [For Your Eyes Only: Improving Netflix Video Quality with Neural Networks (Nov 2022, Netflix)](https://netflixtechblog.com/for-your-eyes-only-improving-netflix-video-quality-with-neural-networks-5b8d032da09c)
+* [Match Cutting at Netflix: Finding Cuts with Smooth Visual Transitions (Nov 2022, Netflix)](https://netflixtechblog.com/match-cutting-at-netflix-finding-cuts-with-smooth-visual-transitions-31c3fc14ae59)
+* [New Series: Creating Media with ML (Nov 2022, Netflix)](https://netflixtechblog.com/new-series-creating-media-with-machine-learning-5067ac110bcd)
 
 ### 2.2. NLP
 * [Build a Robust Text-Based Toxicity Predictor (Dec 2022, Amazon)](https://aws.amazon.com/ko/blogs/machine-learning/build-a-robust-text-based-toxicity-predictor/)
 * [Luda Gen 1, 더 재미있고 자연스러운 대화로 돌아온 루다 1편 - 생성 기반 챗봇 (Dec 2022, 스캐터랩)](https://tech.scatterlab.co.kr/luda-gen-1/): 검색 대신 생성 모델(= GPT2) 기반 챗봇 도입 ← 관계 지향적, 안정성 위해 파인 튜닝 
+* [루다, 눈을 뜨다! 포토챗 베타의 멀티모달 기술 소개 (Nov 2022, 스캐터랩)](https://tech.scatterlab.co.kr/photochat-beta/): CLIP 레트리벌 모델을 적용하여 이미지 코멘팅 하기 (vs. 이미지 인코더 - 텍스트 디코더의 생성 모델, [AI Hub](https://www.aihub.or.kr/) 데이터 이용, 정성적 평가는 SSA로)
+* [How AI Text Generation Models are Reshaping Customer Support at Airbnb (Nov 2022, Airbnb)](https://medium.com/airbnb-engineering/how-ai-text-generation-models-are-reshaping-customer-support-at-airbnb-a851db0b4fa3): ① 헬프 봇 콘텐츠 순위 지정: 모델은 파인 튜닝한 MT5, 입력은 프롬프트 + 사용자 이슈 설명 + 콘텐츠 후보 ② 상담원 대화에 답변 템플릿 실시간 제안: QA 모델(t5-base, Narrativa) 어노테이션 + 로깅 데이터 섞어서 학습, 입력은 채팅 이력 + 프롬프트 ③ 챗봇 패러프레이징: T5 모델 → 단조롭고 보편적으로 응답하는 문제 → 텍스트 클러스터링으로 훈련 데이터 필터링하여 해결
 
 ### 2.3. RecSys, etc.
 * [How to Evaluate the Quality of the Synthetic Data – Measuring from the Perspective of Fidelity, Utility, and Privacy (Dec 2022)](https://aws.amazon.com/blogs/machine-learning/how-to-evaluate-the-quality-of-the-synthetic-data-measuring-from-the-perspective-of-fidelity-utility-and-privacy/): [이전 글](https://aws.amazon.com/blogs/machine-learning/augment-fraud-transactions-using-synthetic-data-in-amazon-sagemaker/)도 읽어보세요. [ydata-synthetic](https://github.com/ydataai/ydata-synthetic) 라이브러리의 WGAN-GP로 태뷸러 데이터 합성 → 충실도(통계량), 유용성(예측 성능), 정보 보호(암기 X) 기준으로 평가
