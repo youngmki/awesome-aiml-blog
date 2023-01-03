@@ -18,7 +18,7 @@
 * [Better LMs without Massive Compute (Nov 2022, Google)](https://ai.googleblog.com/2022/11/better-language-models-without-massive.html)
 * [*ChatGPT*: Optimizing LMs for Dialogue (Nov 2022, OpenAI)](https://openai.com/blog/chatgpt/): GPT 3.5, 사람 피드백 기반의 강화 학습(RLHF)으로 파인 튜닝 → 편향과 유해성 제거
 * [Choosing the Right LM For Your NLP Use Case (Nov 2022)](https://www.topbots.com/choosing-the-right-language-model/)
-* [MoE with Expert Choice Routing (Nov 2022, Google)](
+* [MoE with Expert Choice Routing (Nov 2022, Google)](https://ai.googleblog.com/2022/11/mixture-of-experts-with-expert-choice.html)
 * [Robots That Write Their Own Code (Nov 2022, Google)](https://ai.googleblog.com/2022/11/robots-that-write-their-own-code.html)
 * [The State of Multilingual AI (Nov 2002)](http://ruder.io/state-of-multilingual-ai/)
 
