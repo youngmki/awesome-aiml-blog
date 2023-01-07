@@ -12,6 +12,7 @@
 * [Text-to-Image: Diffusion, Text Conditioning, Guidance, Latent Space (Nov 2022)](https://eugeneyan.com//writing/text-to-image/)
 
 ### 1.2. NLP
+* [Some Remarks on LLMs (Jan 2023)](https://gist.github.com/yoavg/59d174608e92e845c8994ac2e234c8a9)
 * [Accelerating Text Generation with Confident Adaptive Language Modeling (*CALM*) (Dec 2022, Google)](https://ai.googleblog.com/2022/12/accelerating-text-generation-with.html?m=1)
 * [Illustrating Reinforcement Learning from Human Feedback (RLHF) (Dec 2022, HuggingFace)](https://huggingface.co/blog/rlhf)
 ① 정책 언어 모델과 ② 프롬프트 별 생성 텍스트에 대해 사람의 선호도 점수로 학습한 보상 모델 이용하여 언어 모델 튜닝(= PPO)
@@ -36,7 +37,6 @@
 명함 인식 위한 인스턴스 세그멘테이션 → OpenCV 후처리 과정을 다룬 [1편](https://blog.dramancompany.com/2022/11/ai-%eb%aa%85%ed%95%a8-%ec%b4%ac%ec%98%81-%ec%9d%b8%ec%8b%9d-%eb%a6%ac%ec%98%a4rio-%ec%a0%81%ec%9a%a9%ea%b8%b0-1%eb%b6%80-%eb%aa%85%ed%95%a8%ec%b4%ac%ec%98%81%ec%9d%b8%ec%8b%9d-%ec%9c%84%ed%95%9c-ins/)도 읽어보세요.
 * [For Your Eyes Only: Improving Netflix Video Quality with Neural Networks (Nov 2022, Netflix)](https://netflixtechblog.com/for-your-eyes-only-improving-netflix-video-quality-with-neural-networks-5b8d032da09c)
 * [Match Cutting at Netflix: Finding Cuts with Smooth Visual Transitions (Nov 2022, Netflix)](https://netflixtechblog.com/match-cutting-at-netflix-finding-cuts-with-smooth-visual-transitions-31c3fc14ae59)
-* [New Series: Creating Media with ML (Nov 2022, Netflix)](https://netflixtechblog.com/new-series-creating-media-with-machine-learning-5067ac110bcd)
 
 ### 2.2. NLP
 * [Build a Robust Text-Based Toxicity Predictor (Dec 2022, Amazon)](https://aws.amazon.com/ko/blogs/machine-learning/build-a-robust-text-based-toxicity-predictor/): 적대적 훈련 = 훈련 데이터 + 성공한 적대적 사례 → 모델 훈련의 반복, 파인 튜닝한 DistilBERT 모델에 대해 [TextAttack](https://github.com/QData/TextAttack)으로 텍스트 일부 변형하되, 의미 보존하는 적대적 사례 생성, 공격 성공률(ASR)로 모델의 강건성 측정
