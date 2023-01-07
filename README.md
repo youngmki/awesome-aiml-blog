@@ -69,7 +69,7 @@
 
 ## 3. AWS ML Only
 ### 3.3. RecSys, etc.
-* [Power Recommendations and Search Using an IMDb Knowledge Graph (Dec 2022)](https://aws.amazon.com/blogs/machine-learning/part-2-power-recommendations-and-search-using-an-imdb-knowledge-graph/): [1편](https://aws.amazon.com/blogs/machine-learning/part-1-power-recommendation-and-search-using-an-imdb-knowledge-graph/)도 함께 읽어보세요. ① 데이터 적재: S3에 IMDb 데이터 저장 → Glue 통해 Neptune Gremlin 포맷으로 가공 → Neptune 클러스터에 적재 → Gremlin 쿼리 가능 ② [DGN](https://www.dgl.ai/)의 GNN 학습: S3로 내보내기 작업 → 데이터 처리(모델 유형: 이기종 또는 지식 그래프) → 모델 훈련 → 임베딩 다운로드
+* [Power Recommendations and Search Using an IMDb Knowledge Graph (Dec 2022)](https://aws.amazon.com/blogs/machine-learning/power-recommendations-and-search-using-an-imdb-knowledge-graph-part-3/): [1편](https://aws.amazon.com/blogs/machine-learning/part-1-power-recommendation-and-search-using-an-imdb-knowledge-graph/), [2편](https://aws.amazon.com/blogs/machine-learning/part-2-power-recommendations-and-search-using-an-imdb-knowledge-graph/)도 함께 읽어보세요. ① 데이터 적재: S3에 IMDb 데이터 저장 → Glue 통해 Neptune Gremlin 포맷으로 가공 → Neptune 클러스터에 적재 → Gremlin 쿼리 가능 ② [DGN](https://www.dgl.ai/)의 GNN 학습: S3로 내보내기 작업 → 데이터 처리(모델 유형: 이기종 또는 지식 그래프) → 모델 훈련 → 임베딩 다운로드
 
 ### 3.4. Training, Inference and MLOps
 * [Best Practices for **Amazon SageMaker Training Managed Warm Pools** (Dec 2022)](https://aws.amazon.com/blogs/machine-learning/best-practices-for-amazon-sagemaker-training-managed-warm-pools/): 연속 훈련 작업 시 웜풀 이용 → 작업 시작 시간 단축
