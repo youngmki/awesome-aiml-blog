@@ -23,6 +23,7 @@
 * [MoE with Expert Choice Routing (Nov 2022, Google)](https://ai.googleblog.com/2022/11/mixture-of-experts-with-expert-choice.html)
 * [Robots That Write Their Own Code (Nov 2022, Google)](https://ai.googleblog.com/2022/11/robots-that-write-their-own-code.html)
 * [The State of Multilingual AI (Nov 2002)](http://ruder.io/state-of-multilingual-ai/)
+* [Aligning Language Models to Follow Instructions (Jan 2022, OpenAI)](https://openai.com/blog/instruction-following/)
 
 ### 1.3. RecSys, etc.
 * [Mastering Stratego, the Classic Game of Imperfect Information (Dec 2022, DeepMind)](https://www.deepmind.com/blog/mastering-stratego-the-classic-game-of-imperfect-information)
