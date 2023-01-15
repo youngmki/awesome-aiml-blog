@@ -61,8 +61,7 @@
 
 ### 2.4. Training, Inference and MLOps
 * [Self-Serve Feature Platforms: Architectures and APIs (Jan 2023)](https://huyenchip.com//2023/01/08/self-serve-feature-platforms.html)  
-일괄 예측에서 온라인 예측으로 이동하면서 피쳐 플랫폼 필요성 대두, 온라인 예측 시 ① 피쳐 연산 ② 피쳐 검색 ③ 예측 연산에 대한 레이턴시 문제 → 피쳐 플랫폼은 ①과 ② 해결 
-피쳐 스토어 ∈ 피쳐 플랫폼, 
+일괄 예측에서 온라인 예측 형태로 이동하면서 피쳐 플랫폼 필요성 대두, 온라인 예측 시 ① 피쳐 연산 ② 피쳐 검색 ③ 예측 연산에 대한 레이턴시 문제 존재 → 피쳐 플랫폼은 ①과 ② 해결, 피쳐 스토어 ∈ 피쳐 플랫폼(예: [Feathr](https://github.com/feathr-ai/feathr)), 모델 플랫폼 구성요소 = ① 모델 배포 API ② 모델 레지스트리 ③ 예측 서비스 (+ 실험) 구성이라면 피쳐 플랫폼 구성요소 = ① 피쳐 API ② 피쳐 카탈로그 ③ 연산 엔진 ④ 피쳐 스토어 ← 그러나 비용, DE와 DS의 협업, 반복 속도 문제로 인해 구축 어려움, 피쳐 유형으로 일괄(Spark), 준실시간(Flink/Spark 스트리밍 연산), 실시간 존재,  온라인 예측으로 전환할 때 기업 전략 ① 배치 피쳐만 사용하면서 온라인 예측 지원하도록 예측 서비스 재설계 ② 스트리밍 피쳐 지원하도록 피쳐 플랫폼 재설계
 * [Automatically Retrain NNs with **Renate** (Dec 2022, Amazon)](https://aws.amazon.com/blogs/machine-learning/automatically-retrain-neural-networks-with-renate/): 신경망 자동 재학습을 위한 라이브러리, [Renate](https://renate.readthedocs.io/en/latest/) ← 재학습 시 과거 데이터에 대한 예측 성능 하락하는 '파국적 망각' 현상 방지, 지속적 학습에 대한 HPO와 클라우드 백엔드 학습 지원
 * [CLOVA MD 상품추천 솔루션 (Dec 2022, 네이버)](https://engineering.clova.ai/posts/2022/12/clova-md-solution): 적재(Hive 또는 Kafka) → 학습과 추론(Argo Workflows 또는 Kubeflow) → 결과 저장(MongoDB)의 일 단위 배치 작업
 * [Introducing **Fortuna**: A Library for Uncertainty Quantification (Dec 2022, Amazon)](https://aws.amazon.com/blogs/machine-learning/introducing-fortuna-a-library-for-uncertainty-quantification/): 딥러닝의 과신 문제 ← [Fortuna](https://aws-fortuna.readthedocs.io/en/latest/), 불확실성 정량화 라이브러리 ① Flax 모델 ② 출력이나 불확실성 추정값에서 시작 가능
