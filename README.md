@@ -66,6 +66,7 @@
   * 모델 플랫폼 구성요소 = 모델 배포 API + 모델 레지스트리 + 예측 서비스 (+ 실험 구성)이라면 피쳐 플랫폼 구성요소 = 피쳐 API + 피쳐 카탈로그 + 연산 엔진 + 피쳐 스토어 ← 그러나 비용, DE와 DS의 협업, 개발 속도 문제로 인해 구축 어려움  
   * 피쳐 유형으로 일괄(Spark), 준실시간(Flink/Spark 스트리밍 연산), 실시간이 존재,  온라인 예측으로 전환할 때 기업 전략 ① 배치 피쳐만 사용하면서 온라인 예측 지원하는 예측 서비스 재설계 ② 스트리밍 피쳐 지원하는 피쳐 플랫폼 재설계  
 (2) 스트리밍 피쳐의 느린 개발 속도, 왜? 
+  * DS에게 불편한 API: 초기 Scala I/F 채택 → SQL I/F 도입, 그러나 불충분한 시간 관련 연산 기능과 낮은 코드 재사용성 → 파이썬 I/F로 전환
 * [Automatically Retrain NNs with **Renate** (Dec 2022, Amazon)](https://aws.amazon.com/blogs/machine-learning/automatically-retrain-neural-networks-with-renate/): 신경망 자동 재학습을 위한 라이브러리, [Renate](https://renate.readthedocs.io/en/latest/) ← 재학습 시 과거 데이터에 대한 예측 성능 하락하는 '파국적 망각' 현상 방지, 지속적 학습에 대한 HPO와 클라우드 백엔드 학습 지원
 * [CLOVA MD 상품추천 솔루션 (Dec 2022, 네이버)](https://engineering.clova.ai/posts/2022/12/clova-md-solution): 적재(Hive 또는 Kafka) → 학습과 추론(Argo Workflows 또는 Kubeflow) → 결과 저장(MongoDB)의 일 단위 배치 작업
 * [Introducing **Fortuna**: A Library for Uncertainty Quantification (Dec 2022, Amazon)](https://aws.amazon.com/blogs/machine-learning/introducing-fortuna-a-library-for-uncertainty-quantification/): 딥러닝의 과신 문제 ← [Fortuna](https://aws-fortuna.readthedocs.io/en/latest/), 불확실성 정량화 라이브러리 ① Flax 모델 ② 출력이나 불확실성 추정값에서 시작 가능
