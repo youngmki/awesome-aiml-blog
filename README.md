@@ -94,6 +94,7 @@
     * DS에게 불편한 API: 초기 Scala I/F 채택 → SQL I/F 도입, 그러나 불충분한 시간 관련 연산 기능과 낮은 코드 재사용성 → 파이썬 I/F로 전환, 피쳐 API에 대한 고려사항 ① 배치 일회성 연산 vs. 스트림 지속 연산 ② 변환(ETL)과 피쳐화 로직의 분리
     * 빠른 실험을 위한 기능 부족 ← 피쳐/데이터 원천 검색과 데이터 거버넌스 기능 지원 + 자동화된 백필
 ![feature_platform](./images/feature_platform.png)
+* [FMS(차량 관제 시스템) 데이터 파이프라인 구축기 1편. 스트리밍/배치 파이프라인 개발기 (Jan 2023, 쏘카)](https://tech.socarcorp.kr/data/2023/01/17/build-fms-data-pipeline-1.html)
 * [Automatically Retrain NNs with **Renate** (Dec 2022, Amazon)](https://aws.amazon.com/blogs/machine-learning/automatically-retrain-neural-networks-with-renate/)
     * 신경망 자동 재학습을 위한 라이브러리, [Renate](https://renate.readthedocs.io/en/latest/) ← 재학습 시 과거 데이터에 대한 예측 성능 하락하는 '파국적 망각' 현상 방지
     * 지속적 학습에 대한 HPO와 클라우드 백엔드 학습 지원
