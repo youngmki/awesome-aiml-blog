@@ -86,13 +86,13 @@
 
 ### 2.4. Training, Inference and MLOps
 * [Self-Serve Feature Platforms: Architectures and APIs (Jan 2023)](https://huyenchip.com//2023/01/08/self-serve-feature-platforms.html)  
-  * 일괄 예측에서 온라인 예측 형태로 이동하면서 피쳐 플랫폼 필요성 대두, 온라인 예측 시 ① 피쳐 연산 ② 피쳐 리트리벌 ③ 예측 연산에 대한 레이턴시 문제 존재 → 피쳐 플랫폼은 ①과 ② 해결  
-  * 피쳐 스토어 ∈ 피쳐 플랫폼(예: [Feathr](https://github.com/feathr-ai/feathr))
-  * 모델 플랫폼 구성요소 = 모델 배포 API + 모델 레지스트리 + 예측 서비스 (+ 실험 구성)이라면 피쳐 플랫폼 구성요소 = 피쳐 API + 피쳐 카탈로그 + 연산 엔진 + 피쳐 스토어 ← 그러나 비용, DE와 DS의 협업, 개발 속도 문제로 인해 구축 어려움  
-  * 피쳐 유형으로 일괄(Spark), 준실시간(Flink/Spark 스트리밍 연산), 실시간이 존재 → 온라인 예측으로 전환할 때 기업 전략 ① 일괄 피쳐만 사용하면서 온라인 예측 지원하는 예측 서비스 재설계 ② 스트리밍 피쳐 지원하는 피쳐 플랫폼 재설계  
-  * 피쳐 플랫폼의 핵심 과제 = 스트리밍 피쳐의 느린 개발 속도, 왜? 
-  * DS에게 불편한 API: 초기 Scala I/F 채택 → SQL I/F 도입, 그러나 불충분한 시간 관련 연산 기능과 낮은 코드 재사용성 → 파이썬 I/F로 전환, 피쳐 API에 대한 고려사항 ① 배치 일회성 연산 vs. 스트림 지속 연산 ② 변환(ETL)과 피쳐화 로직의 분리
-  * 빠른 실험을 위한 기능 부족 ← 피쳐/데이터 원천 검색과 데이터 거버넌스 기능 지원 + 자동화된 백필
+    * 일괄 예측에서 온라인 예측 형태로 이동하면서 피쳐 플랫폼 필요성 대두, 온라인 예측 시 ① 피쳐 연산 ② 피쳐 리트리벌 ③ 예측 연산에 대한 레이턴시 문제 존재 → 피쳐 플랫폼은 ①과 ② 해결  
+    * 피쳐 스토어 ∈ 피쳐 플랫폼(예: [Feathr](https://github.com/feathr-ai/feathr))
+    * 모델 플랫폼 구성요소 = 모델 배포 API + 모델 레지스트리 + 예측 서비스 (+ 실험 구성)이라면 피쳐 플랫폼 구성요소 = 피쳐 API + 피쳐 카탈로그 + 연산 엔진 + 피쳐 스토어 ← 그러나 비용, DE와 DS의 협업, 개발 속도 문제로 인해 구축 어려움  
+    * 피쳐 유형으로 일괄(Spark), 준실시간(Flink/Spark 스트리밍 연산), 실시간이 존재 → 온라인 예측으로 전환할 때 기업 전략 ① 일괄 피쳐만 사용하면서 온라인 예측 지원하는 예측 서비스 재설계 ② 스트리밍 피쳐 지원하는 피쳐 플랫폼 재설계  
+    * 피쳐 플랫폼의 핵심 과제 = 스트리밍 피쳐의 느린 개발 속도, 왜? 
+    * DS에게 불편한 API: 초기 Scala I/F 채택 → SQL I/F 도입, 그러나 불충분한 시간 관련 연산 기능과 낮은 코드 재사용성 → 파이썬 I/F로 전환, 피쳐 API에 대한 고려사항 ① 배치 일회성 연산 vs. 스트림 지속 연산 ② 변환(ETL)과 피쳐화 로직의 분리
+    * 빠른 실험을 위한 기능 부족 ← 피쳐/데이터 원천 검색과 데이터 거버넌스 기능 지원 + 자동화된 백필
 ![feature_platform](./images/feature_platform.png)
 * [Automatically Retrain NNs with **Renate** (Dec 2022, Amazon)](https://aws.amazon.com/blogs/machine-learning/automatically-retrain-neural-networks-with-renate/)
     * 신경망 자동 재학습을 위한 라이브러리, [Renate](https://renate.readthedocs.io/en/latest/) ← 재학습 시 과거 데이터에 대한 예측 성능 하락하는 '파국적 망각' 현상 방지
@@ -127,27 +127,39 @@
 
 ### 3.4. Training, Inference and MLOps
 * [Best Practices for Load Testing **Amazon SageMaker** Real-Time Inference Endpoints (Jan 2023)](https://aws.amazon.com/blogs/machine-learning/best-practices-for-load-testing-amazon-sagemaker-real-time-inference-endpoints/)
-  * 모델 엔드포인트에 대해 레이턴시 준수하면서 목표 TPS(예: 1000) 달성해야 함
-  * 추적할 CW 지표 ① 인스턴스 수준 지표: `CPUUtilization`(+ GPU), `MemoryUtilization`(60~70%가 적당) ② 호출 지표: `ModelLatency` ← 추론 스크립트 프로파일링, 통신 프로토콜(REST vs gRPC), 모델 프레임워크 최적화 + `OverheadLatency`(사용자 제어 X) + 인터넷 등 ③ 오토 스케일링: `InvocationPerInstance` 기반 추적
-  * 부하 테스트는 충분한 성능의 EC2에 [Locust](https://github.com/locustio/locust)(쉬운 사용성, 분산과 확장 기능, 별도 UI 존재) 설치하여 진행 → 분산 모드는 핵심 작업자가 다른 복수 작업자를 생성하고 제어함, 5xx 오류는 `CPUUtilization` 함께 봐야함, 낮은데 오류 발생한다면 컨테이너/모델 설정의 문제
+    * 모델 엔드포인트에 대해 레이턴시 준수하면서 목표 TPS(예: 1000) 달성해야 함
+    * 추적할 CW 지표 ① 인스턴스 수준 지표: `CPUUtilization`(+ GPU), `MemoryUtilization`(60~70%가 적당) ② 호출 지표: `ModelLatency` ← 추론 스크립트 프로파일링, 통신 프로토콜(REST vs gRPC), 모델 프레임워크 최적화 + `OverheadLatency`(사용자 제어 X) + 인터넷 등 ③ 오토 스케일링: `InvocationPerInstance` 기반 추적
+    * 부하 테스트는 충분한 성능의 EC2에 [Locust](https://github.com/locustio/locust)(쉬운 사용성, 분산과 확장 기능, 별도 UI 존재) 설치하여 진행 → 분산 모드는 핵심 작업자가 다른 복수 작업자를 생성하고 제어함, 5xx 오류는 `CPUUtilization` 함께 봐야함, 낮은데 오류 발생한다면 컨테이너/모델 설정의 문제
 * [Model Hosting Patterns in **Amazon SageMaker**, Part 1: Common Design Patterns for Building ML Applications on **Amazon SageMaker** (Jan 2023)](https://aws.amazon.com/blogs/machine-learning/model-hosting-patterns-in-amazon-sagemaker-part-1-common-design-patterns-for-building-ml-applications-on-amazon-sagemaker/)
-  * 단일 vs. 다중 모델 기반: MME, MCE, 모델 앙상블 패턴(분산 후 합산, 집합 연산, 동적 선택, 직렬 추론, 비즈니스 로직)
-  * 실시간 vs. 준실시간(비동기식) vs. 배치 vs. 서버리스 → 비용, 추론 레이턴시, 처리량(TPS), 확장 구성 복잡도, 트래픽 예상 패턴의 5가지 적합도 함수로 판단  
+    * 단일 vs. 다중 모델 기반: MME, MCE, 모델 앙상블 패턴(분산 후 합산, 집합 연산, 동적 선택, 직렬 추론, 비즈니스 로직)
+    * 실시간 vs. 준실시간(비동기식) vs. 배치 vs. 서버리스 → 비용, 추론 레이턴시, 처리량(TPS), 확장 구성 복잡도, 트래픽 예상 패턴의 5가지 적합도 함수로 판단  
 * [Best Practices for **Amazon SageMaker Training Managed Warm Pools** (Dec 2022)](https://aws.amazon.com/blogs/machine-learning/best-practices-for-amazon-sagemaker-training-managed-warm-pools/): 연속 훈련 작업 시 웜풀 이용 → 작업 시작 시간 단축
 * [Define Customized Permissions in Minutes with **Amazon SageMaker Role Manager** (Dec 2022)](https://aws.amazon.com/ko/blogs/machine-learning/define-customized-permissions-in-minutes-with-amazon-sagemaker-role-manager/)
-* [Deploy **Amazon SageMaker Autopilot** Models to **Serverless Inference Endpoints** (Dec 2022)](https://aws.amazon.com/ko/blogs/machine-learning/deploy-amazon-sagemaker-autopilot-models-to-serverless-inference-endpoints/): ① Autopilot 모델 훈련 모드: 앙상블(단일 컨테이너 반환), HPO(3개의 컨테이너 반환), 자동(데이터셋 100MB 기준) ② 서버리스 추론: 콜드 스타트 허용하되, 트래픽이 급격히 변하는 패턴에 적합(= 오토스케일링) ③ boto3 통해 엔드포인트에 배포, HPO의 경우 3개의 컨테이너에 대해 각각 엔드포인트 생성하고 요청과 응답을 직접 연결
+* [Deploy **Amazon SageMaker Autopilot** Models to **Serverless Inference Endpoints** (Dec 2022)](https://aws.amazon.com/ko/blogs/machine-learning/deploy-amazon-sagemaker-autopilot-models-to-serverless-inference-endpoints/)
+    * Autopilot 모델 훈련 모드: 앙상블(단일 컨테이너 반환), HPO(3개의 컨테이너 반환), 자동(데이터셋 100MB 기준)
+    * 서버리스 추론: 콜드 스타트 허용하되, 트래픽이 급격히 변하는 패턴에 적합(= 오토스케일링)
+    * boto3 통해 엔드포인트에 배포, HPO의 경우 3개의 컨테이너에 대해 각각 엔드포인트 생성하고 요청과 응답을 직접 연결
 * [Improve Governance of Your ML Models with **Amazon SageMaker** (Dec 2022)](https://aws.amazon.com/ko/blogs/machine-learning/improve-governance-of-your-machine-learning-models-with-amazon-sagemaker/)
 * [Minimize the Production Impact of ML Model Updates with **Amazon SageMaker Shadow Testing** (Dec 2022)](https://aws.amazon.com/ko/blogs/machine-learning/minimize-the-production-impact-of-ml-model-updates-with-amazon-sagemaker-shadow-testing/)
-* [New Performance Improvements in **Amazon SageMaker Model Parallel Library** (Dec 2022)](https://aws.amazon.com/blogs/machine-learning/new-performance-improvements-in-amazon-sagemaker-model-parallel-library/): SMP의 MiCS 기반 샤드 데이터 병렬 처리에 2가지 성능 개선 ① SMDDP Collectives: NCCL 대신 AWS에 최적화된 AllGather 집합 연산 구현 ② [FlashAttention](https://github.com/HazyResearch/flash-attention): I/O 인식 방식으로 셀프 어텐션 재구현 → GPT-NeoX 100B의 경우 이전 버전 대비 훈련 속도 30% 향상  
-* [Next Generation **Amazon SageMaker Experiments** – Organize, Track, and Compare Your ML Trainings at Scale (Dec 2022)](https://aws.amazon.com/blogs/machine-learning/next-generation-amazon-sagemaker-experiments-organize-track-and-compare-your-machine-learning-trainings-at-scale/): 세이지메이커 SDK와 통합, Experiment와 Run 중심의 구성, 콘텍스트 자동 공유 → 작업 내부에서 로딩 가능, Clarify 리포트와 통합
-* [Speed ML Development Using **SageMaker Feature Store** and **Apache Iceberg** Offline Store Compaction (Dec 2022)](https://aws.amazon.com/blogs/machine-learning/speed-ml-development-using-sagemaker-feature-store-and-apache-iceberg-offline-store-compaction/): 표준 Glue 대신 Iceberg 테이블 포맷으로 피쳐 그룹 생성 가능 (c.f. 스토리지 = S3, 메타스토어 = Glue Data Catalog) → Glue Job으로 테이블 압축 스케줄링 → 압축, 오래된 스냅숏과 고아 파일 제거 → Athena 쿼리 속도 10 ~ 100배 향상
+* [New Performance Improvements in **Amazon SageMaker Model Parallel Library** (Dec 2022)](https://aws.amazon.com/blogs/machine-learning/new-performance-improvements-in-amazon-sagemaker-model-parallel-library/)
+    * SMP의 MiCS 기반 샤드 데이터 병렬 처리에 2가지 성능 개선
+    * 1/ SMDDP Collectives: NCCL 대신 AWS에 최적화된 AllGather 집합 연산 구현
+    * 2/ [FlashAttention](https://github.com/HazyResearch/flash-attention): I/O 인식 방식으로 셀프 어텐션 재구현 → GPT-NeoX 100B의 경우 이전 버전 대비 훈련 속도 30% 향상  
+* [Next Generation **Amazon SageMaker Experiments** – Organize, Track, and Compare Your ML Trainings at Scale (Dec 2022)](https://aws.amazon.com/blogs/machine-learning/next-generation-amazon-sagemaker-experiments-organize-track-and-compare-your-machine-learning-trainings-at-scale/)
+    * 세이지메이커 SDK와 통합, Experiment와 Run 중심의 구성, 콘텍스트 자동 공유 → 작업 내부에서 로딩 가능, Clarify 리포트와 통합
+* [Speed ML Development Using **SageMaker Feature Store** and **Apache Iceberg** Offline Store Compaction (Dec 2022)](https://aws.amazon.com/blogs/machine-learning/speed-ml-development-using-sagemaker-feature-store-and-apache-iceberg-offline-store-compaction/)
+    * 표준 Glue 대신 Iceberg 테이블 포맷으로 피쳐 그룹 생성 가능 (c.f. 스토리지 = S3, 메타스토어 = Glue Data Catalog)
+    * Glue Job으로 테이블 압축 스케줄링 → 압축, 오래된 스냅숏과 고아 파일 제거 → Athena 쿼리 속도 10 ~ 100배 향상
 * [Build a Cross-Account MLOps Workflow Using the **Amazon SageMaker Model Registry** (Nov 2022)](https://aws.amazon.com/blogs/machine-learning/build-a-cross-account-mlops-workflow-using-the-amazon-sagemaker-model-registry/)
 * [ByteDance Saves Up to 60% on Inference Costs While Reducing Latency and Increasing Throughput Using **AWS Inferentia** (Nov 2022)](https://aws.amazon.com/ko/blogs/machine-learning/bytedance-saves-up-to-60-on-inference-costs-while-reducing-latency-and-increasing-throughput-using-aws-inferentia/)
-* [Deploy *BLOOM-176B* and *OPT-30B* on **Amazon SageMaker** with Large Model Inference **DLC**s and **DeepSpeed** (Nov 2022)](https://aws.amazon.com/blogs/machine-learning/deploy-bloom-176b-and-opt-30b-on-amazon-sagemaker-with-large-model-inference-deep-learning-containers-and-deepspeed/): 딥스피드와 허깅페이스 액셀러레이트가 포함된 대형 모델 추론 [컨테이너 패키지](https://github.com/aws/deep-learning-containers/blob/master/available_images.md#large-model-inference-containers) 신규 배포
+* [Deploy *BLOOM-176B* and *OPT-30B* on **Amazon SageMaker** with Large Model Inference **DLC**s and **DeepSpeed** (Nov 2022)](https://aws.amazon.com/blogs/machine-learning/deploy-bloom-176b-and-opt-30b-on-amazon-sagemaker-with-large-model-inference-deep-learning-containers-and-deepspeed/)
+    * 딥스피드와 허깅페이스 액셀러레이트가 포함된 대형 모델 추론 [컨테이너 패키지](https://github.com/aws/deep-learning-containers/blob/master/available_images.md#large-model-inference-containers) 신규 배포
 * [Enabling Hybrid ML Workflows on **Amazon EKS** and **Amazon SageMaker** with One-Click **Kubeflow** on AWS Deployment (Nov 2022)](https://aws.amazon.com/blogs/machine-learning/enabling-hybrid-ml-workflows-on-amazon-eks-and-amazon-sagemaker-with-one-click-kubeflow-on-aws-deployment/)
 * [Getting Started with Deploying Real-Time Models on **Amazon SageMaker** (Nov 2022)](https://aws.amazon.com/blogs/machine-learning/getting-started-with-deploying-real-time-models-on-amazon-sagemaker/)
 * [Launch **Amazon SageMaker Autopilot** Experiments Directly from within **Amazon SageMaker Pipelines** to Easily Automate MLOps Workflows (Nov 2022)](https://aws.amazon.com/ko/blogs/machine-learning/launch-amazon-sagemaker-autopilot-experiments-directly-from-within-amazon-sagemaker-pipelines-to-easily-automate-mlops-workflows/)
 * [Model Hosting Patterns in **SageMaker**: Best Practices in Testing and Updating Models on **SageMaker** (Nov 2022)](https://aws.amazon.com/blogs/machine-learning/model-hosting-patterns-in-sagemaker-best-practices-in-testing-and-updating-models-on-sagemaker/)
 * [Run ML Inference Workloads on **AWS Graviton**-Based Instances with **Amazon SageMaker** (Nov 2022)](https://aws.amazon.com/ko/blogs/machine-learning/run-machine-learning-inference-workloads-on-aws-graviton-based-instances-with-amazon-sagemaker/)
 * [Serve Multiple Models with **Amazon SageMaker** and **Triton Inference Server** (Nov 2022)](https://aws.amazon.com/blogs/machine-learning/serve-multiple-models-with-amazon-sagemaker-and-triton-inference-server/)
-* [Using Streaming Ingestion with **Amazon SageMaker Feature Store** to Make ML-Backed Decisions in Near-Real Time (Dec 2020)](https://aws.amazon.com/blogs/machine-learning/using-streaming-ingestion-with-amazon-sagemaker-feature-store-to-make-ml-backed-decisions-in-near-real-time/): [Faker](https://faker.readthedocs.io/en/master/)로 신용카드 거래 데이터 생성, Kinesis Data Stream → Kinesis Data Analytics (스트리밍 집합 연산, 예: 지난 10분간) → Lambda → SageMaker Feature Store (온라인) → SageMaker Processing (① 배치 집합 연산, 예: 지난 1주간 ② 모델 훈련 데이터셋 생성) → SageMaker Feature Store → Lambda (피쳐화, 예: 10분 / 1주의 비율) → SageMaker Endpoint (추론)
+* [Using Streaming Ingestion with **Amazon SageMaker Feature Store** to Make ML-Backed Decisions in Near-Real Time (Dec 2020)](https://aws.amazon.com/blogs/machine-learning/using-streaming-ingestion-with-amazon-sagemaker-feature-store-to-make-ml-backed-decisions-in-near-real-time/)
+    * [Faker](https://faker.readthedocs.io/en/master/)로 신용카드 거래 데이터 생성
+    * Kinesis Data Stream → Kinesis Data Analytics (스트리밍 집합 연산, 예: 지난 10분간) → Lambda → SageMaker Feature Store (온라인) → SageMaker Processing (① 배치 집합 연산, 예: 지난 1주간 ② 모델 훈련 데이터셋 생성) → SageMaker Feature Store → Lambda (피쳐화, 예: 10분 / 1주의 비율) → SageMaker Endpoint (추론)
