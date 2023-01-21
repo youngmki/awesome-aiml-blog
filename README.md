@@ -85,6 +85,7 @@
     * 클래스 불균형 문제 완화 위해 SMOTE 사용, 정상 샘플만 사용한 준지도 학습(DAE 등)과 이진/다중 클래스 지도 학습으로 실험 수행
 
 ### 2.4. Training, Inference and MLOps
+* [DL Tuning Playbook (Jan 2023)](https://github.com/google-research/tuning_playbook)
 * [Self-Serve Feature Platforms: Architectures and APIs (Jan 2023)](https://huyenchip.com//2023/01/08/self-serve-feature-platforms.html)  
     * 일괄 예측에서 온라인 예측 형태로 이동하면서 피쳐 플랫폼 필요성 대두, 온라인 예측 시 ① 피쳐 연산 ② 피쳐 리트리벌 ③ 예측 연산에 대한 레이턴시 문제 존재 → 피쳐 플랫폼은 ①과 ② 해결  
     * 피쳐 스토어 ∈ 피쳐 플랫폼(예: [Feathr](https://github.com/feathr-ai/feathr))
