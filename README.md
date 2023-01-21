@@ -137,7 +137,8 @@
     * ① 실시간: 레이턴시 ms (< 60s), 페이로드 < 6MB, Auto Scaling, Graviton과 Inf1(+ SageMaker Neo) 인스턴스 지원 ② 비동기식: 레이턴시 1s (< 15m), 페이로드 < 1GB, Auto Scaling와 SNS 지원 ③ 서버리스: 콜드 스타트, 메모리 크기(~ vCPU 수) 선택 가능 (메모리 크기 > 모델 크기) ④ 일괄 변환
     * ① 단일 모델: Auto Scaling, Inf1(+ Neo) 인스턴스 지원 ② MME: 콜드 스타트, Auto Scaling, GPU 인스턴스와 Triton 인퍼런스 서버 지원 → 모델 앙상블 배포(Triton DAG) ③ MCE: 컨테이너 최대 15개, Auto Scaling 지원하나 GPU는 X → 직렬 추론 파이프라인 패턴에 적합
     *  비즈니스 기능과 프레임워크에 따라 그룹화하여 동일 컨테이너에 호스팅 또는 컨테이너 분리
-* [Best Practices for **Amazon SageMaker Training Managed Warm Pools** (Dec 2022)](https://aws.amazon.com/blogs/machine-learning/best-practices-for-amazon-sagemaker-training-managed-warm-pools/): 연속 훈련 작업 시 웜풀 이용 → 작업 시작 시간 단축
+* [Best Practices for **Amazon SageMaker Training Managed Warm Pools** (Dec 2022)](https://aws.amazon.com/blogs/machine-learning/best-practices-for-amazon-sagemaker-training-managed-warm-pools/)
+    * 연속 훈련 작업 시 웜풀 이용 → 작업 시작 시간 단축
 * [Define Customized Permissions in Minutes with **Amazon SageMaker Role Manager** (Dec 2022)](https://aws.amazon.com/ko/blogs/machine-learning/define-customized-permissions-in-minutes-with-amazon-sagemaker-role-manager/)
 * [Deploy **Amazon SageMaker Autopilot** Models to **Serverless Inference Endpoints** (Dec 2022)](https://aws.amazon.com/ko/blogs/machine-learning/deploy-amazon-sagemaker-autopilot-models-to-serverless-inference-endpoints/)
     * Autopilot 모델 훈련 모드: 앙상블(단일 컨테이너 반환), HPO(3개의 컨테이너 반환), 자동(데이터셋 100MB 기준)
