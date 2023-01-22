@@ -134,8 +134,8 @@
     * 부하 테스트는 충분한 성능의 EC2에 [Locust](https://github.com/locustio/locust)(쉬운 사용성, 분산과 확장 기능, 별도 UI 존재) 설치하여 진행 → 분산 모드는 핵심 작업자가 다른 복수 작업자를 생성하고 제어함, 5xx 오류는 `CPUUtilization` 함께 봐야함, 낮은데 오류 발생한다면 컨테이너/모델 설정의 문제
 * [Model Hosting Patterns in **Amazon SageMaker**, Part 1: Common Design Patterns for Building ML Applications on **Amazon SageMaker** (Jan 2023)](https://aws.amazon.com/blogs/machine-learning/model-hosting-patterns-in-amazon-sagemaker-part-1-common-design-patterns-for-building-ml-applications-on-amazon-sagemaker/)
     * 비용, 추론 레이턴시, 처리량(TPS), 확장 구성 복잡도, 트래픽 예상 패턴의 5가지 적합도 함수로 적절한 호스팅 패턴 판단  
-    * ① 실시간: 레이턴시 ms (< 60s), 페이로드 < 6MB, Auto Scaling, Graviton과 Inf1(+ SageMaker Neo) 인스턴스 지원 ② 비동기식: 레이턴시 1s (< 15m), 페이로드 < 1GB, Auto Scaling와 SNS 지원 ③ 서버리스: 콜드 스타트, 메모리 크기(~ vCPU 수) 선택 가능 (메모리 크기 > 모델 크기) ④ 일괄 변환
-    * ① 단일 모델: Auto Scaling, Inf1(+ Neo) 인스턴스 지원 ② MME: 콜드 스타트, Auto Scaling, GPU 인스턴스와 Triton 인퍼런스 서버 지원 → 모델 앙상블 배포(Triton DAG) ③ MCE: 컨테이너 최대 15개, Auto Scaling 지원하나 GPU는 X → 직렬 추론 파이프라인 패턴에 적합
+    * ① 실시간: 레이턴시 ms (< 60s), 페이로드 < 6MB, 오토스케일링, Graviton과 Inf1(+ SageMaker Neo) 인스턴스 지원 ② 비동기식: 레이턴시 1s (< 15m), 페이로드 < 1GB, 오토스케일링과 SNS 지원 ③ 서버리스: 콜드 스타트, 메모리 크기(~ vCPU 수) 선택 가능 (메모리 크기 > 모델 크기) ④ 일괄 변환
+    * ① 단일 모델: 오토스케일링, Inf1(+ Neo) 인스턴스 지원 ② MME: 콜드 스타트, Auto Scaling, GPU 인스턴스와 Triton 인퍼런스 서버 지원 → 모델 앙상블 배포(Triton DAG) ③ MCE: 컨테이너 최대 15개, 오토스케일링 지원하나 GPU는 X → 직렬 추론 파이프라인 패턴에 적합
     *  비즈니스 기능과 프레임워크에 따라 그룹화하여 동일 컨테이너에 호스팅 또는 컨테이너 분리
 * [Best Practices for **Amazon SageMaker Training Managed Warm Pools** (Dec 2022)](https://aws.amazon.com/blogs/machine-learning/best-practices-for-amazon-sagemaker-training-managed-warm-pools/)
     * 연속 훈련 작업 시 웜풀 이용 → 작업 시작 시간 단축
