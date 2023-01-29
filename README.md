@@ -79,7 +79,7 @@
 * [Scalable Annotation Service — **Marken** (Jan 2023, Netflix)](https://netflixtechblog.com/scalable-annotation-service-marken-f5ba9266d428)
     * 사내 모든 마이크로 서비스가 원하는 모든 개체에 어노테이션 할 수 있게 서비스 개발
     * ① 스키마 = json: 버전 + 공간 객체 위한 WKT 형식 + 시간 객체 위한 프레임 번호와 나노초 ② 시간/공간 기본 스키마, ML 알고리즘 기본 스키마(레이블, 신뢰도 등) 다중 상속 가능
-    * 낮은 레이턴시, 확장성, 높은 RPS를 위한 아키텍처: Cassandra(저장) + ElasticSearch(검색) → 전체 텍스트, 어간, 시간/공간 어노테이션, 시맨틱 검색([Open Distro](https://opendistro.github.io/for-elasticsearch-docs/docs/knn/)) 지원
+    * 낮은 레이턴시, 확장성, 높은 RPS를 위한 아키텍처: Cassandra(저장) + ElasticSearch(검색) → 전체 텍스트, 어간, 시간/공간 어노테이션, 시맨틱(= 임베딩, [Open Distro](https://opendistro.github.io/for-elasticsearch-docs/docs/knn/)), 레이턴시 저하하는 클러스터 핫스폿 피하도록 롤오버 인덱스 전략 적용, 대량 쿼리 가능하게 Iceberg 테이블 별도 유지
 * [How to Evaluate the Quality of the Synthetic Data – Measuring from the Perspective of Fidelity, Utility, and Privacy (Dec 2022, Amazon)](https://aws.amazon.com/blogs/machine-learning/how-to-evaluate-the-quality-of-the-synthetic-data-measuring-from-the-perspective-of-fidelity-utility-and-privacy/)
     * [이전 글](https://aws.amazon.com/blogs/machine-learning/augment-fraud-transactions-using-synthetic-data-in-amazon-sagemaker/)도 읽어보세요. [ydata-synthetic](https://github.com/ydataai/ydata-synthetic) 라이브러리의 WGAN-GP로 태뷸러 데이터 합성 → 충실도(통계량), 유용성(예측 성능), 정보 보호(암기 X) 기준으로 평가
 * [그 많던 벡터는 다 어디로 갔을까? **Milvus** 활용기 (Nov 2022, 라이너)](https://blog.getliner.com/milvus-usage/)
