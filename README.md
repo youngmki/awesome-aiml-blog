@@ -77,9 +77,9 @@
     * 클래스 불균형(= 승인율과 무관한 게이트웨이 할당 수) 해결하기 위해 IPW 기반 부트스트랩 샘플링 적용 → {트랜잭션 피쳐 × 게이트웨이 = 승인 성공/실패} 데이터 구성, 다중 클래스 LR 학습 → 승인율 기준 A/B 테스트 수행
 * [**PyTorch** Trace Analysis for the Masses (Jan 2023)](https://pytorch.org/blog/trace-analysis-for-masses/)
 * [Scalable Annotation Service — **Marken** (Jan 2023, Netflix)](https://netflixtechblog.com/scalable-annotation-service-marken-f5ba9266d428)
-    * 사내 모든 마이크로 서비스가 원하는 모든 개체에 어노테이션, 할 수 있게 서비스 개발
+    * 사내 모든 마이크로 서비스가 원하는 모든 개체에 어노테이션, 검색할 수 있게 서비스 개발
     * 스키마 = json: 버전 + 공간 객체 위한 WKT 형식 + 시간 객체 위한 프레임 번호와 나노초 → 시간/공간 기본 스키마, ML 알고리즘 기본 스키마(레이블, 신뢰도 등) 다중 상속 가능
-    * 낮은 레이턴시, 확장성, 높은 RPS를 위한 아키텍처: Cassandra(저장) + ElasticSearch(검색) → 전체 텍스트, 어간, 시간/공간 어노테이션, 시맨틱(= 임베딩, [Open Distro](https://opendistro.github.io/for-elasticsearch-docs/docs/knn/)), 레이턴시 저하하는 클러스터 핫스폿 피하도록 롤오버 인덱스 전략 적용, 대량 쿼리 가능하게 Iceberg 테이블 별도 유지
+    * 낮은 레이턴시, 확장성, 높은 RPS를 위한 아키텍처: Cassandra(저장) + ElasticSearch(검색) → 전체 텍스트, 어간, 시간/공간 어노테이션, 시맨틱(= 임베딩, [Open Distro](https://opendistro.github.io/for-elasticsearch-docs/docs/knn/)), 교차 범위 검색 지원, 레이턴시 저하하는 클러스터 핫스폿 피하도록 롤오버 인덱스 전략 적용, 대량 쿼리 가능하게 Iceberg 테이블 별도 유지
 * [How to Evaluate the Quality of the Synthetic Data – Measuring from the Perspective of Fidelity, Utility, and Privacy (Dec 2022, Amazon)](https://aws.amazon.com/blogs/machine-learning/how-to-evaluate-the-quality-of-the-synthetic-data-measuring-from-the-perspective-of-fidelity-utility-and-privacy/)
     * [이전 글](https://aws.amazon.com/blogs/machine-learning/augment-fraud-transactions-using-synthetic-data-in-amazon-sagemaker/)도 읽어보세요. [ydata-synthetic](https://github.com/ydataai/ydata-synthetic) 라이브러리의 WGAN-GP로 태뷸러 데이터 합성 → 충실도(통계량), 유용성(예측 성능), 정보 보호(암기 X) 기준으로 평가
 * [그 많던 벡터는 다 어디로 갔을까? **Milvus** 활용기 (Nov 2022, 라이너)](https://blog.getliner.com/milvus-usage/)
@@ -143,7 +143,7 @@
     * 부하 테스트는 충분한 성능의 EC2에 [Locust](https://github.com/locustio/locust)(쉬운 사용성, 분산과 확장 기능, 별도 UI 존재) 설치하여 진행 → 분산 모드는 핵심 작업자가 다른 복수 작업자를 생성하고 제어함, 5xx 오류는 `CPUUtilization` 함께 봐야함, 낮은데 오류 발생한다면 컨테이너/모델 설정의 문제
 * [Enriching Real-Time News Streams with the Refinitiv Data Library, AWS Services, and **Amazon SageMaker** (Jan 2023)](https://aws.amazon.com/blogs/machine-learning/enriching-real-time-news-streams-with-the-refinitiv-data-library-aws-services-and-amazon-sagemaker/)
 * [Explain Text Classification Model Predictions Using **Amazon SageMaker Clarify** (Jan 2023)](https://aws.amazon.com/blogs/machine-learning/explain-text-classification-model-predictions-using-amazon-sagemaker-clarify/)
-* [How Thomson Reuters Built an AI platform Using **Amazon SageMaker** to Accelerate Delivery of ML Projects](https://aws.amazon.com/blogs/machine-learning/how-thomson-reuters-built-an-ai-platform-using-amazon-sagemaker-to-accelerate-delivery-of-ml-projects/?sc_channel=sm&sc_campaign=Machine_Learning&sc_publisher=LINKEDIN&sc_geo=GLOBAL&sc_outcome=awareness&trk=ml-services&linkId=198747205)
+* [How Thomson Reuters Built an AI platform Using **Amazon SageMaker** to Accelerate Delivery of ML Projects (Jan 2023)](https://aws.amazon.com/blogs/machine-learning/how-thomson-reuters-built-an-ai-platform-using-amazon-sagemaker-to-accelerate-delivery-of-ml-projects/?sc_channel=sm&sc_campaign=Machine_Learning&sc_publisher=LINKEDIN&sc_geo=GLOBAL&sc_outcome=awareness&trk=ml-services&linkId=198747205)
 * [Model Hosting Patterns in **Amazon SageMaker**, Part 1: Common Design Patterns for Building ML Applications on **Amazon SageMaker** (Jan 2023)](https://aws.amazon.com/blogs/machine-learning/model-hosting-patterns-in-amazon-sagemaker-part-1-common-design-patterns-for-building-ml-applications-on-amazon-sagemaker/)
     * 비용, 추론 레이턴시, 처리량(TPS), 확장 구성 복잡도, 트래픽 예상 패턴의 5가지 적합도 함수로 적절한 호스팅 패턴 판단  
     * ① 실시간: 레이턴시 ms (< 60s), 페이로드 < 6MB, 오토 스케일링, Graviton과 Inf1(+ SageMaker Neo) 인스턴스 지원 ② 비동기식: 레이턴시 1s (< 15m), 페이로드 < 1GB, 오토 스케일링과 SNS 지원 ③ 서버리스: 콜드 스타트, 메모리 크기(~ vCPU 수) 선택 가능 (메모리 크기 > 모델 크기) ④ 일괄 변환
