@@ -95,6 +95,8 @@
 * [새로운 루다를 지탱하는 모델 서빙 아키텍처 — 1편: A/B 테스트를 위한 구조 설계 (Jan 2023, 스캐터랩)](https://tech.scatterlab.co.kr/serving-architecture-1/)
     * 지속적 학습 파이프라인 구축 → 모델 서빙 아키텍처 표준화와 배포 자동화 필요 + A/B 테스트 신속, 용이하게
     * A/B 테스트: ① 추론 구조 동일하나 설정값만 상이 ② 상이한 추론 구조 (레트리벌: 대화 임베딩 추출 + 답변 후보 검색 = ANN + 재순위 지정 vs. 생성: 답변 생성 + 재순위 지정) 
+    ![serv_arch](./images/scatterlab.png)
+    
 * [Self-Serve Feature Platforms: Architectures and APIs (Jan 2023)](https://huyenchip.com//2023/01/08/self-serve-feature-platforms.html)  
     * 일괄 예측에서 온라인 예측 형태로 이동하면서 피쳐 플랫폼 필요성 대두, 온라인 예측 시 ① 피쳐 연산 ② 피쳐 리트리벌 ③ 예측 연산에 대한 레이턴시 문제 존재 → 피쳐 플랫폼은 ①과 ② 해결  
     * 피쳐 스토어 ∈ 피쳐 플랫폼(예: [Feathr](https://github.com/feathr-ai/feathr))
