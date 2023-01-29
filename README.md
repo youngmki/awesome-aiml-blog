@@ -73,7 +73,7 @@
 ### 2.3. RecSys, etc.
 * [Improving the Customer’s Experience via ML-Driven Payment Routing (Jan 2023, LinkedIn)](https://engineering.linkedin.com/blog/2023/improving-the-customer-s-experience-via-ml-driven-payment-routin)
     * 기존에는 규칙 기반(예, 40:60) 라우팅 엔진으로 결제 게이트웨이 할당 → 결제 승인율의 변화 포착 못하고 규칙 관리 어려움 → ML 기반 엔진으로 전환
-    * 클래스 불균형(= 승인율과 무관한 게이트웨이 할당 수) 해결하기 위해 IPW 기반 부트스트랩 샘플링 적용 → {트랜잭션 피쳐 × 게이트웨이 = 승인 성공/실패} 데이터 구성, 멀티클래스 LR 학습 → 승인율 기준 A/B 테스트 수행
+    * 클래스 불균형(= 승인율과 무관한 게이트웨이 할당 수) 해결하기 위해 IPW 기반 부트스트랩 샘플링 적용 → {트랜잭션 피쳐 × 게이트웨이 = 승인 성공/실패} 데이터 구성, 다중 클래스 LR 학습 → 승인율 기준 A/B 테스트 수행
 * [Scalable Annotation Service — Marken (Jan 2023, Netflix)](https://netflixtechblog.com/scalable-annotation-service-marken-f5ba9266d428)
 * [How to Evaluate the Quality of the Synthetic Data – Measuring from the Perspective of Fidelity, Utility, and Privacy (Dec 2022, Amazon)](https://aws.amazon.com/blogs/machine-learning/how-to-evaluate-the-quality-of-the-synthetic-data-measuring-from-the-perspective-of-fidelity-utility-and-privacy/)
     * [이전 글](https://aws.amazon.com/blogs/machine-learning/augment-fraud-transactions-using-synthetic-data-in-amazon-sagemaker/)도 읽어보세요. [ydata-synthetic](https://github.com/ydataai/ydata-synthetic) 라이브러리의 WGAN-GP로 태뷸러 데이터 합성 → 충실도(통계량), 유용성(예측 성능), 정보 보호(암기 X) 기준으로 평가
