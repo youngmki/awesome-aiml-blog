@@ -42,6 +42,9 @@
 
 ## 2. Business Cases and Implementations
 ### 2.1. CV
+* [Accelerated *Stable Diffusion* with **PyTorch 2** (Jan 2023)](https://pytorch.org/blog/accelerated-stable-diffusion-2/)
+    * [SD 2.1](https://github.com/Stability-AI/stablediffusion) 기본 또는 [xFormers](https://github.com/facebookresearch/xformers) 사용 대비 PyTorch 2.0(nightly)의 컴파일(`torch.complie`) 기능과 메모리 효율적 어텐션 적용으로 런타임 최대 약 40~50% 개선
+    * ① 기존 어텐션 구현에 플래시 어텐션 통합, 크로스 어텐션과 맞춤형 커널까지 지원, SD의 경우 플래시 어텐션 < 메모리 효율적 어텐션 성능 ② 이전 컴파일 방식과 다르게 컴파일 불가한 위치에도 그래프 중단되지 않고 즉시 실행 모드로 되돌아감
 * [When a Picture is Worth More Than Words (Dec 2022, Airbnb)](https://medium.com/airbnb-engineering/when-a-picture-is-worth-more-than-words-17718860dcc2)
     * ① 미적 점수 레이블링과 예측 ② 자가 학습으로 이미지 임베딩 생성 → HNSW로 유사 이미지 검색 지원
 * [AI 명함 촬영 인식 '리오(RIO)' 적용기 - ML Model Converter와 안드로이드 앱 적용기 (Nov 2022, 드라마앤컴퍼니)](https://blog.dramancompany.com/2022/11/ai-%eb%aa%85%ed%95%a8%ec%b4%ac%ec%98%81%ec%9d%b8%ec%8b%9d-%eb%a6%ac%ec%98%a4-%ec%a0%81%ec%9a%a9%ea%b8%b0-2%eb%b6%80-ml-model-converter%ec%99%80-%ec%95%88%eb%93%9c%eb%a1%9c%ec%9d%b4%eb%93%9c/)
@@ -71,9 +74,6 @@
     * 3/ 챗봇 패러프레이징: T5 모델 → 단조롭고 보편적으로 응답하는 문제 → 텍스트 클러스터링으로 훈련 데이터 필터링하여 해결
 
 ### 2.3. RecSys, etc.
-* [Accelerated *Stable Diffusion* with **PyTorch 2** (Jan 2023)](https://pytorch.org/blog/accelerated-stable-diffusion-2/)
-    * [SD 2.1](https://github.com/Stability-AI/stablediffusion) 기본 또는 [xFormers](https://github.com/facebookresearch/xformers) 사용 대비 PyTorch 2.0(nightly)의 컴파일(`torch.complie`) 기능과 메모리 효율적 어텐션 적용으로 런타임 최대 약 40~50% 개선
-    * ① 기존 어텐션 구현에 플래시 어텐션 통합, 크로스 어텐션과 맞춤형 커널까지 지원, SD의 경우 플래시 어텐션 < 메모리 효율적 어텐션 성능 ② 이전 컴파일 방식과 다르게 컴파일 불가한 위치에도 그래프 중단되지 않고 즉시 실행 모드로 되돌아감
 * [Improving the Customer’s Experience via ML-Driven Payment Routing (Jan 2023, LinkedIn)](https://engineering.linkedin.com/blog/2023/improving-the-customer-s-experience-via-ml-driven-payment-routin)
     * 기존에는 규칙 기반(예, 40:60) 라우팅 엔진으로 결제 게이트웨이 할당 → 결제 승인율의 변화 포착 못하고 규칙 관리 어려움 → ML 기반 엔진으로 전환
     * 클래스 불균형(= 승인율과 무관한 게이트웨이 할당 수) 해결하기 위해 IPW 기반 부트스트랩 샘플링 적용 → {트랜잭션 피쳐 × 게이트웨이 = 승인 성공/실패} 데이터 구성, 다중 클래스 LR 학습 → 승인율 기준 A/B 테스트 수행
