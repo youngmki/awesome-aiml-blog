@@ -13,6 +13,7 @@
 
 ### 1.2. NLP
 * [*Atlas*: Few-Shot Learning with Retrieval Augmented LMs (Jan 2023, Meta)](https://research.facebook.com/blog/2023/1/atlas-few-shot-learning-with-retrieval-augmented-language-models/)
+* [Overcoming The Limitations Of LLMs (Jan 2023)](https://www.topbots.com/overcoming-the-limitations-of-large-language-models/)
 * [Some Remarks on LLMs (Jan 2023)](https://gist.github.com/yoavg/59d174608e92e845c8994ac2e234c8a9)
     * 현재 사람 수준에서 섀넌의 추측 게임을 수행 가능할 정도로 LLM은 지능을 가지고 있음, 그러나 대규모 언어 모델링만으로 얻을 수 있는 것이 아님
     * 기존 언어 모델은 텍스트 기호만 학습했을 뿐 기호에 의미가 연결되어 있지 않음 ← ① 프로그래밍 언어 코드 데이터 훈련 ② 명시적인 지시를 통한 튜닝 ③ RLHF 단계의 도입으로 변곡점 발생(= 기호와 의미의 연결이 가능) 
@@ -152,6 +153,7 @@
 * [**Amazon SageMaker** Built-In **LightGBM** Now Offers Distributed Training Using **Dask** (Jan 2023)](https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-built-in-lightgbm-now-offers-distributed-training-using-dask/)
   
 ### 3.4. Training, Inference and MLOps
+* [AWS를 이용한 MLOps 구축 사례 살펴보기 (Jan 2023)](https://aws.amazon.com/ko/blogs/tech/aws-mlops-use-case/)
 * [Best Practices for Load Testing **Amazon SageMaker** Real-Time Inference Endpoints (Jan 2023)](https://aws.amazon.com/blogs/machine-learning/best-practices-for-load-testing-amazon-sagemaker-real-time-inference-endpoints/)
     * 모델 엔드포인트에 대해 레이턴시 준수하면서 목표 TPS(예: 1000) 달성해야 함
     * 추적할 CW 지표 ① 인스턴스 수준 지표: `CPUUtilization`(+ GPU), `MemoryUtilization`(60~70%가 적당) ② 호출 지표: `ModelLatency` ← 추론 스크립트 프로파일링, 통신 프로토콜(REST vs gRPC), 모델 프레임워크 최적화 + `OverheadLatency`(사용자 제어 X) + 인터넷 등 ③ 오토 스케일링: `InvocationPerInstance` 기반 추적
