@@ -7,7 +7,6 @@
 
 ## 1. Research
 ### 1.1. CV
-* [Real-Time Tracking of Wildfire Boundaries Using Satellite Imagery (Jan 2023, Google)](https://ai.googleblog.com/2023/02/real-time-tracking-of-wildfire.html)
 * [Autoencoders and Diffusers: A Brief Comparison (Dec 2022)](https://eugeneyan.com//writing/autoencoders-vs-diffusers/)
 * [*Data2vec 2.0*: Highly Efficient Self-Supervised Learning for Vision, Speech and Text (Dec 2022, Meta)](https://ai.facebook.com/blog/ai-self-supervised-learning-data2vec/)
 * [Text-to-Image: Diffusion, Text Conditioning, Guidance, Latent Space (Nov 2022)](https://eugeneyan.com//writing/text-to-image/)
@@ -46,6 +45,8 @@
 * [Accelerated *Stable Diffusion* with **PyTorch 2** (Jan 2023)](https://pytorch.org/blog/accelerated-stable-diffusion-2/)
     * [SD 2.1](https://github.com/Stability-AI/stablediffusion) 기본 또는 [xFormers](https://github.com/facebookresearch/xformers) 사용 대비 PyTorch 2.0(nightly)의 컴파일(`torch.complie`) 기능과 메모리 효율적 어텐션 적용으로 런타임 최대 약 40~50% 개선
     * ① 기존 어텐션 구현에 플래시 어텐션 통합, 크로스 어텐션과 맞춤형 커널까지 지원, SD의 경우 플래시 어텐션 < 메모리 효율적 어텐션 성능 ② 이전 컴파일 방식과 다르게 컴파일 불가한 위치에도 그래프 중단되지 않고 즉시 실행 모드로 되돌아감
+* [Discovering Creative Insights in Promotional Artwork (Jan 2023, Netflix))](https://netflixtechblog.com/discovering-creative-insights-in-promotional-artwork-295e4d788db5)
+* [Real-Time Tracking of Wildfire Boundaries Using Satellite Imagery (Jan 2023, Google)](https://ai.googleblog.com/2023/02/real-time-tracking-of-wildfire.html)
 * [When a Picture is Worth More Than Words (Dec 2022, Airbnb)](https://medium.com/airbnb-engineering/when-a-picture-is-worth-more-than-words-17718860dcc2)
     * ① 미적 점수 레이블링과 예측 ② 자가 학습으로 이미지 임베딩 생성 → HNSW로 유사 이미지 검색 지원
 * [AI 명함 촬영 인식 '리오(RIO)' 적용기 - ML Model Converter와 안드로이드 앱 적용기 (Nov 2022, 드라마앤컴퍼니)](https://blog.dramancompany.com/2022/11/ai-%eb%aa%85%ed%95%a8%ec%b4%ac%ec%98%81%ec%9d%b8%ec%8b%9d-%eb%a6%ac%ec%98%a4-%ec%a0%81%ec%9a%a9%ea%b8%b0-2%eb%b6%80-ml-model-converter%ec%99%80-%ec%95%88%eb%93%9c%eb%a1%9c%ec%9d%b4%eb%93%9c/)
@@ -141,6 +142,9 @@
     * 세이지메이커 vs. 쿠브플로우, 카펜터를 통한 쿠버네티스 GPU 노드 관리를 다룬 [1편](https://helloworld.kurly.com/blog/first-mlops/)도 읽어보세요.
 
 ## 3. AWS ML Only
+### 3.3 RecSys, etc.
+* [**Amazon SageMaker** Built-In **LightGBM** Now Offers Distributed Training Using **Dask** (Jan 2023)](https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-built-in-lightgbm-now-offers-distributed-training-using-dask/)
+  
 ### 3.4. Training, Inference and MLOps
 * [Best Practices for Load Testing **Amazon SageMaker** Real-Time Inference Endpoints (Jan 2023)](https://aws.amazon.com/blogs/machine-learning/best-practices-for-load-testing-amazon-sagemaker-real-time-inference-endpoints/)
     * 모델 엔드포인트에 대해 레이턴시 준수하면서 목표 TPS(예: 1000) 달성해야 함
