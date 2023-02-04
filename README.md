@@ -7,6 +7,7 @@
 
 ## 1. Research
 ### 1.1. CV
+* [Real-Time Tracking of Wildfire Boundaries Using Satellite Imagery (Jan 2023, Google)](https://ai.googleblog.com/2023/02/real-time-tracking-of-wildfire.html)
 * [Autoencoders and Diffusers: A Brief Comparison (Dec 2022)](https://eugeneyan.com//writing/autoencoders-vs-diffusers/)
 * [*Data2vec 2.0*: Highly Efficient Self-Supervised Learning for Vision, Speech and Text (Dec 2022, Meta)](https://ai.facebook.com/blog/ai-self-supervised-learning-data2vec/)
 * [Text-to-Image: Diffusion, Text Conditioning, Guidance, Latent Space (Nov 2022)](https://eugeneyan.com//writing/text-to-image/)
@@ -97,6 +98,8 @@
 
 ### 2.4. Training, Inference and MLOps
 * [DL Tuning Playbook (Jan 2023, Google)](https://github.com/google-research/tuning_playbook)
+* [Open Source **Vizier**: Towards Reliable and Flexible Hyperparameter and Blackbox Optimization (Jan 2023, Google)](https://ai.googleblog.com/2023/02/open-source-vizier-towards-reliable-and.html)
+* [The **Flan** Collection: Advancing Open Source Methods for Instruction Tuning (Jan 2023, Google)](https://ai.googleblog.com/2023/02/the-flan-collection-advancing-open.html)
 * [새로운 루다를 지탱하는 모델 서빙 아키텍처 — 1편: A/B 테스트를 위한 구조 설계 (Jan 2023, 스캐터랩)](https://tech.scatterlab.co.kr/serving-architecture-1/)
     * 지속적 학습 파이프라인 구축 → 모델 서빙 아키텍처 표준화와 배포 자동화 필요 + A/B 테스트 신속, 용이하게 수행
     * A/B 테스트: ① 추론 구조 동일하나 설정값만 상이 ② 상이한 추론 구조 (레트리벌: 대화 임베딩 추출 + 답변 후보 검색 = ANN + 재순위 지정 vs. 생성: 답변 생성 + 재순위 지정) 
@@ -153,6 +156,7 @@
     *  비즈니스 기능과 프레임워크에 따라 그룹화하여 동일 컨테이너에 호스팅 또는 컨테이너 분리
 * [Best Practices for **Amazon SageMaker Training Managed Warm Pools** (Dec 2022)](https://aws.amazon.com/blogs/machine-learning/best-practices-for-amazon-sagemaker-training-managed-warm-pools/)
     * 연속 훈련 작업 시 웜풀 이용 → 작업 시작 시간 단축
+* [Scaling Distributed Training with **AWS Trainium** and **Amazon EKS** (Jan 2023)](https://aws.amazon.com/blogs/machine-learning/scaling-distributed-training-with-aws-trainium-and-amazon-eks/)
 * [Define Customized Permissions in Minutes with **Amazon SageMaker Role Manager** (Dec 2022)](https://aws.amazon.com/ko/blogs/machine-learning/define-customized-permissions-in-minutes-with-amazon-sagemaker-role-manager/)
 * [Deploy **Amazon SageMaker Autopilot** Models to **Serverless Inference Endpoints** (Dec 2022)](https://aws.amazon.com/ko/blogs/machine-learning/deploy-amazon-sagemaker-autopilot-models-to-serverless-inference-endpoints/)
     * Autopilot 모델 훈련 모드: 앙상블(단일 컨테이너 반환), HPO(3개의 컨테이너 반환), 자동(데이터셋 100MB 기준)
