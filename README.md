@@ -81,6 +81,9 @@
     * 기존에는 규칙 기반(예, 40:60) 라우팅 엔진으로 결제 게이트웨이 할당 → 결제 승인율의 변화 포착 못하고 규칙 관리 어려움 → ML 기반 엔진으로 전환
     * 클래스 불균형(= 승인율과 무관한 게이트웨이 할당 수) 해결하기 위해 IPW 기반 부트스트랩 샘플링 적용 → {트랜잭션 피쳐 × 게이트웨이 = 승인 성공/실패} 데이터 구성, 다중 클래스 LR 학습 → 승인율 기준 A/B 테스트 수행
 * [Learning To Rank Diversely (Jan 2023, Airbnb)](https://medium.com/airbnb-engineering/learning-to-rank-diversely-add6b1929621)
+    * 랭킹 NN은 숙소 쌍 비교하여 예약 확률 높은 것을 학습 → 알고리즘이 검색 결과 모든 위치마다 대세를 따르는 다수결의 법칙 ≠ 예약 금액을 최대화하는 파레토 법칙 → 유사한 숙소 노출 줄여야 함
+    * 유사도 추정하는 NN: 훈련 셋 = 예약된 최상위 노출 결과 건은 폐기 + 최상위이지만 예약 실패한 것을 선행 숙소라고 별도로 두고 예약 성공/실패 숙소 쌍을 구성 → 쌍 별로 예약 확률을 학습하되 숙소 예약 확률에 선행 숙소와의 유사도를 빼줘야 하며 기존 예약 확률 알기에 유사도 거꾸로 학습 가능
+    * 
 * [Powering Millions of Real-Time Decisions with **LyftLearn** Serving (Jan 2023, Lyft)](https://eng.lyft.com/powering-millions-of-real-time-decisions-with-lyftlearn-serving-9bb1f73318dc)
 * [**PyTorch** Trace Analysis for the Masses (Jan 2023)](https://pytorch.org/blog/trace-analysis-for-masses/)
 * [Scalable Annotation Service — **Marken** (Jan 2023, Netflix)](https://netflixtechblog.com/scalable-annotation-service-marken-f5ba9266d428)
