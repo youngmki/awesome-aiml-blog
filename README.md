@@ -151,8 +151,7 @@
   
 ### 3.3 RecSys, etc.
 * [**Amazon SageMaker** Built-In **LightGBM** Now Offers Distributed Training Using **Dask** (Jan 2023)](https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-built-in-lightgbm-now-offers-distributed-training-using-dask/)
-    * LightGBM 데이터세트를 청크로 나누고 인스턴스에 배포 → 병렬 처리 지원 유형 ① 데이터(로컬 히스토그램) ② 피쳐 ③ 투표 (Dask는 ①과 ③만 지원)
-    * 인스턴스는 Dask 클러스터(Dask 스케줄러 1대 + 작업자 여러 대)를 구성
+    * LightGBM 데이터세트를 청크로 나누고 인스턴스에 배포 → 병렬 처리 지원 유형 ① 데이터(로컬 히스토그램) ② 피쳐 ③ 투표 (Dask는 ①과 ③만 지원), 인스턴스는 Dask 클러스터(Dask 스케줄러 1대 + 작업자 여러 대)를 구성
     * CSV 또는 Parquet 형식의 복수 개 파일 지원, 범주형은 JSON 파일로 제공
   
 ### 3.4. Training, Inference and MLOps
