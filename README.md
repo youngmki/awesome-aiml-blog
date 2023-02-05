@@ -46,7 +46,7 @@
 * [Accelerated *Stable Diffusion* with **PyTorch 2** (Jan 2023)](https://pytorch.org/blog/accelerated-stable-diffusion-2/)
     * [SD 2.1](https://github.com/Stability-AI/stablediffusion) 기본 또는 [xFormers](https://github.com/facebookresearch/xformers) 사용 대비 PyTorch 2.0(nightly)의 컴파일(`torch.complie`) 기능과 메모리 효율적 어텐션 적용으로 런타임 최대 약 40~50% 개선
     * ① 기존 어텐션 구현에 플래시 어텐션 통합, 크로스 어텐션과 맞춤형 커널까지 지원, SD의 경우 플래시 어텐션 < 메모리 효율적 어텐션 성능 ② 이전 컴파일 방식과 다르게 컴파일 불가한 위치에도 그래프 중단되지 않고 즉시 실행 모드로 되돌아감
-* [Discovering Creative Insights in Promotional Artwork (Jan 2023, Netflix))](https://netflixtechblog.com/discovering-creative-insights-in-promotional-artwork-295e4d788db5)
+* [Discovering Creative Insights in Promotional Artwork (Jan 2023, Netflix)](https://netflixtechblog.com/discovering-creative-insights-in-promotional-artwork-295e4d788db5)
 * [Real-Time Tracking of Wildfire Boundaries Using Satellite Imagery (Jan 2023, Google)](https://ai.googleblog.com/2023/02/real-time-tracking-of-wildfire.html)
 * [When a Picture is Worth More Than Words (Dec 2022, Airbnb)](https://medium.com/airbnb-engineering/when-a-picture-is-worth-more-than-words-17718860dcc2)
     * ① 미적 점수 레이블링과 예측 ② 자가 학습으로 이미지 임베딩 생성 → HNSW로 유사 이미지 검색 지원
@@ -161,7 +161,7 @@
     * 추적할 CW 지표 ① 인스턴스 수준 지표: `CPUUtilization`(+ GPU), `MemoryUtilization`(60~70%가 적당) ② 호출 지표: `ModelLatency` ← 추론 스크립트 프로파일링, 통신 프로토콜(REST vs gRPC), 모델 프레임워크 최적화 + `OverheadLatency`(사용자 제어 X) + 인터넷 등 ③ 오토 스케일링: `InvocationPerInstance` 기반 추적
     * 부하 테스트는 충분한 성능의 EC2에 [Locust](https://github.com/locustio/locust)(쉬운 사용성, 분산과 확장 기능, 별도 UI 존재) 설치하여 진행 → 분산 모드는 핵심 작업자가 다른 복수 작업자를 생성하고 제어함, 5xx 오류는 `CPUUtilization` 함께 봐야함, 낮은데 오류 발생한다면 컨테이너/모델 설정의 문제
 * [Enriching Real-Time News Streams with the Refinitiv Data Library, AWS Services, and **Amazon SageMaker** (Jan 2023)](https://aws.amazon.com/blogs/machine-learning/enriching-real-time-news-streams-with-the-refinitiv-data-library-aws-services-and-amazon-sagemaker/)
-* [How Thomson Reuters Built an AI platform Using **Amazon SageMaker** to Accelerate Delivery of ML Projects (Jan 2023)](https://aws.amazon.com/blogs/machine-learning/how-thomson-reuters-built-an-ai-platform-using-amazon-sagemaker-to-accelerate-delivery-of-ml-projects/?sc_channel=sm&sc_campaign=Machine_Learning&sc_publisher=LINKEDIN&sc_geo=GLOBAL&sc_outcome=awareness&trk=ml-services&linkId=198747205)
+* [How Thomson Reuters Built an AI platform Using **Amazon SageMaker** to Accelerate Delivery of ML Projects (Jan 2023)](https://aws.amazon.com/blogs/machine-learning/how-thomson-reuters-built-an-ai-platform-using-amazon-sagemaker-to-accelerate-delivery-of-ml-projects/)
 * [Model Hosting Patterns in **Amazon SageMaker**, Part 1: Common Design Patterns for Building ML Applications on **Amazon SageMaker** (Jan 2023)](https://aws.amazon.com/blogs/machine-learning/model-hosting-patterns-in-amazon-sagemaker-part-1-common-design-patterns-for-building-ml-applications-on-amazon-sagemaker/)
     * 비용, 추론 레이턴시, 처리량(TPS), 확장 구성 복잡도, 트래픽 예상 패턴의 5가지 적합도 함수로 적절한 호스팅 패턴 판단  
     * ① 실시간: 레이턴시 ms (< 60s), 페이로드 < 6MB, 오토 스케일링, Graviton과 Inf1(+ SageMaker Neo) 인스턴스 지원 ② 비동기식: 레이턴시 1s (< 15m), 페이로드 < 1GB, 오토 스케일링과 SNS 지원 ③ 서버리스: 콜드 스타트, 메모리 크기(~ vCPU 수) 선택 가능 (메모리 크기 > 모델 크기) ④ 일괄 변환
