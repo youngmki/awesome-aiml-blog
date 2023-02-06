@@ -173,6 +173,8 @@
 * [Best Practices for **Amazon SageMaker Training Managed Warm Pools** (Dec 2022)](https://aws.amazon.com/blogs/machine-learning/best-practices-for-amazon-sagemaker-training-managed-warm-pools/)
     * 연속 훈련 작업 시 웜풀 이용 → 작업 시작 시간 단축
 * [Scaling Distributed Training with **AWS Trainium** and **Amazon EKS** (Jan 2023)](https://aws.amazon.com/blogs/machine-learning/scaling-distributed-training-with-aws-trainium-and-amazon-eks/)
+    * trn1 인스턴스(32xlarge)는 울트라 클러스터에 배포 가능, EFA 네트워크 연결 → EKS가 trn1 사용하는 분산 훈련 지원
+    * EKS 클러스터: trn1 인스턴스 노드 그룹 + Neuron SDK + Neuron & EFA 용 EKS 플러그인 + ECR과 학습 이미지 + FSx for Lustre 파일 시스템 + TorchX 
 * [Define Customized Permissions in Minutes with **Amazon SageMaker Role Manager** (Dec 2022)](https://aws.amazon.com/ko/blogs/machine-learning/define-customized-permissions-in-minutes-with-amazon-sagemaker-role-manager/)
 * [Deploy **Amazon SageMaker Autopilot** Models to **Serverless Inference Endpoints** (Dec 2022)](https://aws.amazon.com/ko/blogs/machine-learning/deploy-amazon-sagemaker-autopilot-models-to-serverless-inference-endpoints/)
     * Autopilot 모델 훈련 모드: 앙상블(단일 컨테이너 반환), HPO(3개의 컨테이너 반환), 자동(데이터셋 100MB 기준)
@@ -194,7 +196,6 @@
 * [Deploy *BLOOM-176B* and *OPT-30B* on **Amazon SageMaker** with Large Model Inference **DLC**s and **DeepSpeed** (Nov 2022)](https://aws.amazon.com/blogs/machine-learning/deploy-bloom-176b-and-opt-30b-on-amazon-sagemaker-with-large-model-inference-deep-learning-containers-and-deepspeed/)
     * 딥스피드와 허깅페이스 액셀러레이트가 포함된 대형 모델 추론 [컨테이너 패키지](https://github.com/aws/deep-learning-containers/blob/master/available_images.md#large-model-inference-containers) 신규 배포
 * [Enabling Hybrid ML Workflows on **Amazon EKS** and **Amazon SageMaker** with One-Click **Kubeflow** on AWS Deployment (Nov 2022)](https://aws.amazon.com/blogs/machine-learning/enabling-hybrid-ml-workflows-on-amazon-eks-and-amazon-sagemaker-with-one-click-kubeflow-on-aws-deployment/)
-    * Trn1 인스턴스(32xlarge)는 울트라 클러스터에 배포 가능, EFA 네트워크 연결
 * [Getting Started with Deploying Real-Time Models on **Amazon SageMaker** (Nov 2022)](https://aws.amazon.com/blogs/machine-learning/getting-started-with-deploying-real-time-models-on-amazon-sagemaker/)
 * [Launch **Amazon SageMaker Autopilot** Experiments Directly from within **Amazon SageMaker Pipelines** to Easily Automate MLOps Workflows (Nov 2022)](https://aws.amazon.com/ko/blogs/machine-learning/launch-amazon-sagemaker-autopilot-experiments-directly-from-within-amazon-sagemaker-pipelines-to-easily-automate-mlops-workflows/)
 * [Model Hosting Patterns in **SageMaker**: Best Practices in Testing and Updating Models on **SageMaker** (Nov 2022)](https://aws.amazon.com/blogs/machine-learning/model-hosting-patterns-in-sagemaker-best-practices-in-testing-and-updating-models-on-sagemaker/)
