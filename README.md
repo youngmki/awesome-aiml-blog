@@ -161,6 +161,7 @@
   
 ### 3.4. Training, Inference and MLOps
 * [**Amazon SageMaker** Automatic Model Tuning Now Supports Three New Completion Criteria for HPO (Feb 2023)](https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-automatic-model-tuning-now-supports-three-new-completion-criteria-for-hyperparameter-optimization/)
+    * 자동 모델 튜닝 완료 조건에 기존의 최대 훈련 작업 횟수(`MaxNumberOfTrainingJobs`), 목표 성과 지표(`TargetObjectiveMetricValue`) 외에 최대 튜닝 시간(`MaxRuntimeInSeconds`), 개선 모니터링(`BestObjectiveNotImproving`), 수렴 감지(`CompleteOnVonvergence`) 추가 ← 상호 배타적 X   
 * [Optimize Your ML Deployments with Auto Scaling on **Amazon SageMaker** (Feb 2023)](https://aws.amazon.com/blogs/machine-learning/optimize-your-machine-learning-deployments-with-auto-scaling-on-amazon-sagemaker/)
 * [AWS를 이용한 MLOps 구축 사례 살펴보기 (Jan 2023)](https://aws.amazon.com/ko/blogs/tech/aws-mlops-use-case/)
 * [Best Practices for Load Testing **Amazon SageMaker** Real-Time Inference Endpoints (Jan 2023)](https://aws.amazon.com/blogs/machine-learning/best-practices-for-load-testing-amazon-sagemaker-real-time-inference-endpoints/)
@@ -179,7 +180,7 @@
 * [Scaling Distributed Training with **AWS Trainium** and **Amazon EKS** (Jan 2023)](https://aws.amazon.com/blogs/machine-learning/scaling-distributed-training-with-aws-trainium-and-amazon-eks/)
     * trn1 인스턴스(32xlarge)는 울트라 클러스터에 배포 가능, EFA 네트워크 연결 → EKS가 trn1 사용하는 분산 훈련 지원
     * EKS 클러스터: trn1 인스턴스 노드 그룹 + Neuron SDK + Neuron & EFA 용 EKS 플러그인 + ECR & 컨테이너 이미지 + FSx for Lustre 파일 시스템 + [TorchX 범용 작업 시작 관리자](https://pytorch.org/torchx/main/)(Volcano 배치 스케줄러 & etcd 서버: 키-값 저장소) + TorchX DDP 모듈 
-    * CF로 EKS 클러스터 생성 → EKS 노드 그룹 생성: AMI와 EFA 네트워크 구성 → Trainium & EFA 용 EKS 플러그인과 Volcano & etcd 서버 설치 → 공유 스토리지 연결, 학습 컨테이너 빌드와 푸시 → 훈련 데이터 설정 → PyTorch Neuron은 JIT이지만 neuron_parallel_compile 도구로 모델 사전 컴파일 → 분산 훈련 시작(torchxrun), 각 NeuronCore는 [XLA 장치](https://pytorch.org/xla/master/)로 접근 가능 → kubectl 또는 TensorBoard로 모니터링
+    * CF로 EKS 클러스터 생성 → EKS 노드 그룹 생성: AMI와 EFA 네트워크 구성 → Trainium & EFA 용 EKS 플러그인과 Volcano & etcd 서버 설치 → 공유 스토리지 연결, 학습 컨테이너 빌드와 푸시 → 훈련 데이터 설정 → PyTorch Neuron은 JIT이지만 neuron_parallel_compile 도구로 모델 사전 컴파일 → 분산 훈련 시작(torchxrun), 각 NeuronCore는 [XLA 장치](https://pytorch.org/xla/master/)로써 접근 가능 → kubectl 또는 TensorBoard로 모니터링
 * [Define Customized Permissions in Minutes with **Amazon SageMaker Role Manager** (Dec 2022)](https://aws.amazon.com/ko/blogs/machine-learning/define-customized-permissions-in-minutes-with-amazon-sagemaker-role-manager/)
 * [Deploy **Amazon SageMaker Autopilot** Models to **Serverless Inference Endpoints** (Dec 2022)](https://aws.amazon.com/ko/blogs/machine-learning/deploy-amazon-sagemaker-autopilot-models-to-serverless-inference-endpoints/)
     * Autopilot 모델 훈련 모드: 앙상블(단일 컨테이너 반환), HPO(3개의 컨테이너 반환), 자동(데이터셋 100MB 기준)
