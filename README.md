@@ -165,8 +165,8 @@
 * [Optimize Your ML Deployments with Auto Scaling on **Amazon SageMaker** (Feb 2023)](https://aws.amazon.com/blogs/machine-learning/optimize-your-machine-learning-deployments-with-auto-scaling-on-amazon-sagemaker/)
     * ① Create-model → 모델 ② Create-endpoint-config → 배리언트 ③ Create-endpoint → 엔드포인트 (①-③까지 애플리케이션 설정) ④ Register-scalable-target → 스케일링 가능한 타깃(= 지표) ⑤ Put-scalable-policy → 스케일링 정책 (④-⑤까지 스케일링 설정) ← 스케일링 설정 이전에 스케일링 계획 단계가 필요!
     * 엔드포인트의 지표 유형: 호출 지표 (호출 횟수, 4xx와 5xx 오류 수), 레이턴시 지표 (모델 레이턴시 = 컨테이너 추론에 걸리는 시간, 오버헤드 레이턴시 = 엔트포인트 레이턴시 - 모델 레이턴시), 사용률 (CPU, 메모리, GPU, GPU 메모리, 디스크 사용률)
-    * 스케일링 계획 ① 애플리케이션 특성 식별: `Inference Recommender` 기본 작업 통한 벤치마킹 (포화 상태까지 요청 증대) → 결과 분석 → 스케일링 한계 탐색 (가용성 vs. 비용으로 결정, 가용성 최적화 시 40%, 비용 최적화 시 70%, 균형점 50%) ② 스케일링 기대치 설정 (최대 요청 수, 요청 패턴) ③ 적용과 평가: 트래픽 패턴, 최대 요청 수 지정한 `Inference Recommender` 고급 작업으로 수행 → 대상 추적 (`InvocationsPerInstance`으로, 쿨다운 값 입력)과 평가 → 단계 별 스케일링과 평가 
-    * 기타: 예약된 스케일링
+    * 스케일링 계획 ① 애플리케이션 특성 식별: `Inference Recommender` 기본 작업 통한 벤치마킹 (포화 상태까지 요청 증대) → 결과 분석 → 스케일링 한계 탐색 (가용성 vs. 비용으로 결정, 가용성 최적화 시 40%, 비용 최적화 시 70%, 균형점 50%) ② 스케일링 가정 설정 (최대 요청 수, 트래픽 패턴) ③ 적용과 평가: `Inference Recommender` 고급 작업으로 수행 → 대상 추적 (`InvocationsPerInstance`으로, 쿨다운 값 입력)과 평가 → 단계 별 스케일링과 평가 
+    * 튜닝: 예약된 스케일링 정책 조합도 고려, 스케일 아웃 대신 업도 고려, 사용자 지표 정의 가능, 스케일링 알람 조정
 * [AWS를 이용한 MLOps 구축 사례 살펴보기 (Jan 2023)](https://aws.amazon.com/ko/blogs/tech/aws-mlops-use-case/)
 * [Best Practices for Load Testing **Amazon SageMaker** Real-Time Inference Endpoints (Jan 2023)](https://aws.amazon.com/blogs/machine-learning/best-practices-for-load-testing-amazon-sagemaker-real-time-inference-endpoints/)
     * 모델 엔드포인트에 대해 레이턴시 준수하면서 목표 TPS(예: 1000) 달성해야 함
