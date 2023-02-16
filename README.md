@@ -163,7 +163,7 @@
 * [**Amazon SageMaker** Automatic Model Tuning Now Supports Three New Completion Criteria for HPO (Feb 2023)](https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-automatic-model-tuning-now-supports-three-new-completion-criteria-for-hyperparameter-optimization/)
     * 자동 모델 튜닝 완료 조건에 기존의 최대 훈련 작업 횟수(`MaxNumberOfTrainingJobs`), 목표 성과 지표(`TargetObjectiveMetricValue`) 외에 최대 튜닝 시간(`MaxRuntimeInSeconds`), 개선 모니터링(`BestObjectiveNotImproving`), 수렴 감지(`CompleteOnVonvergence`) 추가 ← 상호 배타적 조건 X   
 * [Optimize Your ML Deployments with Auto Scaling on **Amazon SageMaker** (Feb 2023)](https://aws.amazon.com/blogs/machine-learning/optimize-your-machine-learning-deployments-with-auto-scaling-on-amazon-sagemaker/)
-    *  
+    * ① Create-model → 모델 ② Create-endpoint-config → 배리언트 ③ Create-endpoint → 엔드포인트 (①~③까지 세이지메이커 애플리케이션 설정) ④ Register-scalable-target → 조정 가능한 타깃 ⑤ Put-scalable-policy → 조정 정책 (④~⑤까지 Autoscaling 조정 설정)
 * [AWS를 이용한 MLOps 구축 사례 살펴보기 (Jan 2023)](https://aws.amazon.com/ko/blogs/tech/aws-mlops-use-case/)
 * [Best Practices for Load Testing **Amazon SageMaker** Real-Time Inference Endpoints (Jan 2023)](https://aws.amazon.com/blogs/machine-learning/best-practices-for-load-testing-amazon-sagemaker-real-time-inference-endpoints/)
     * 모델 엔드포인트에 대해 레이턴시 준수하면서 목표 TPS(예: 1000) 달성해야 함
