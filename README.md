@@ -163,7 +163,7 @@
 * [**Amazon SageMaker** Automatic Model Tuning Now Supports Three New Completion Criteria for HPO (Feb 2023)](https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-automatic-model-tuning-now-supports-three-new-completion-criteria-for-hyperparameter-optimization/)
     * 자동 모델 튜닝 완료 조건에 기존의 최대 훈련 작업 횟수(`MaxNumberOfTrainingJobs`), 목표 성과 지표(`TargetObjectiveMetricValue`) 외에 최대 튜닝 시간(`MaxRuntimeInSeconds`), 개선 모니터링(`BestObjectiveNotImproving`), 수렴 감지(`CompleteOnVonvergence`) 추가 ← 상호 배타적 조건 X   
 * [Optimize Your ML Deployments with Auto Scaling on **Amazon SageMaker** (Feb 2023)](https://aws.amazon.com/blogs/machine-learning/optimize-your-machine-learning-deployments-with-auto-scaling-on-amazon-sagemaker/)
-    * ① Create-model → 모델 ② Create-endpoint-config → 배리언트 ③ Create-endpoint → 엔드포인트 (①-③까지 세이지메이커 애플리케이션 설정) ④ Register-scalable-target → 스케일링 가능한 타깃(= 지표) ⑤ Put-scalable-policy → 스케일링 정책 (④-⑤까지 Autoscaling 스케일링 설정) ← 스케일링 설정 이전에 스케일링 계획 단계가 필요!
+    * ① Create-model → 모델 ② Create-endpoint-config → 배리언트 ③ Create-endpoint → 엔드포인트 (①-③까지 애플리케이션 설정) ④ Register-scalable-target → 스케일링 가능한 타깃(= 지표) ⑤ Put-scalable-policy → 스케일링 정책 (④-⑤까지 스케일링 설정) ← 스케일링 설정 이전에 스케일링 계획 단계가 필요!
     * 엔드포인트의 지표 유형: 호출 지표 (호출 횟수, 4xx와 5xx 오류 수), 레이턴시 지표 (모델 레이턴시 = 컨테이너 추론에 걸리는 시간, 오버헤드 레이턴시 = 엔트포인트 레이턴시 - 모델 레이턴시), 사용률 (CPU, 메모리, GPU, GPU 메모리, 디스크 사용률)
     * 스케일링 계획 ① 애플리케이션 특성 식별: 스케일링 기대치 설정 (최대 요청 수, 요청 패턴) → 적용과 평가 (성공까지 반복)
 * [AWS를 이용한 MLOps 구축 사례 살펴보기 (Jan 2023)](https://aws.amazon.com/ko/blogs/tech/aws-mlops-use-case/)
