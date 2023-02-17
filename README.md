@@ -7,7 +7,7 @@
 
 ## 1. Research
 ### 1.1. CV
-* [Token Merging: Your *ViT* but Faster (Feb 2023, Meta)](https://github.com/facebookresearch/ToMe)
+* [Token Merging: Your *ViT* but Faster (Feb 2023, Meta)](https://research.facebook.com/blog/2023/2/token-merging-your-vit-but-faster/)
 * [Autoencoders and Diffusers: A Brief Comparison (Dec 2022)](https://eugeneyan.com//writing/autoencoders-vs-diffusers/)
 * [*Data2vec 2.0*: Highly Efficient Self-Supervised Learning for Vision, Speech and Text (Dec 2022, Meta)](https://ai.facebook.com/blog/ai-self-supervised-learning-data2vec/)
 * [Text-to-Image: Diffusion, Text Conditioning, Guidance, Latent Space (Nov 2022)](https://eugeneyan.com//writing/text-to-image/)
