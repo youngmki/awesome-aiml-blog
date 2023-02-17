@@ -13,6 +13,7 @@
 * [Text-to-Image: Diffusion, Text Conditioning, Guidance, Latent Space (Nov 2022)](https://eugeneyan.com//writing/text-to-image/)
 
 ### 1.2. NLP
+* [How Should AI Systems Behave, and Who Should Decide? (Feb 2023, OpenAI)](https://openai.com/blog/how-should-ai-systems-behave/)
 * [*Atlas*: Few-Shot Learning with Retrieval Augmented LMs (Jan 2023, Meta)](https://research.facebook.com/blog/2023/1/atlas-few-shot-learning-with-retrieval-augmented-language-models/)
 * [Overcoming The Limitations Of LLMs (Jan 2023)](https://www.topbots.com/overcoming-the-limitations-of-large-language-models/)
 * [Some Remarks on LLMs (Jan 2023)](https://gist.github.com/yoavg/59d174608e92e845c8994ac2e234c8a9)
@@ -108,6 +109,7 @@
     * 클래스 불균형 문제 완화 위해 SMOTE 사용, 정상 샘플만 사용한 준지도 학습(DAE 등)과 이진/다중 클래스 지도 학습으로 실험 수행
 
 ### 2.4. Training, Inference and MLOps
+* [Scaling Media ML at Netflix (Feb 2023, Netflix)](https://netflixtechblog.com/scaling-media-machine-learning-at-netflix-f19b400243)
 * [DL Tuning Playbook (Jan 2023, Google)](https://github.com/google-research/tuning_playbook)
 * [Open Source **Vizier**: Towards Reliable and Flexible Hyperparameter and Blackbox Optimization (Jan 2023, Google)](https://ai.googleblog.com/2023/02/open-source-vizier-towards-reliable-and.html)
 * [The **Flan** Collection: Advancing Open Source Methods for Instruction Tuning (Jan 2023, Google)](https://ai.googleblog.com/2023/02/the-flan-collection-advancing-open.html)
