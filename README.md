@@ -158,7 +158,7 @@
 * [Explain Text Classification Model Predictions Using **Amazon SageMaker Clarify** (Jan 2023)](https://aws.amazon.com/blogs/machine-learning/explain-text-classification-model-predictions-using-amazon-sagemaker-clarify/)
   
 ### 3.3 RecSys, etc.
-* [Measure the Business Impact of **Amazon Personalize** Recommendations](https://aws.amazon.com/blogs/machine-learning/measure-the-business-impact-of-amazon-personalize-recommendations/)
+* [Measure the Business Impact of **Amazon Personalize** Recommendations (Feb 2023)](https://aws.amazon.com/blogs/machine-learning/measure-the-business-impact-of-amazon-personalize-recommendations/)
 * [**Amazon SageMaker** Built-In **LightGBM** Now Offers Distributed Training Using **Dask** (Jan 2023)](https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-built-in-lightgbm-now-offers-distributed-training-using-dask/)
     * LightGBM 데이터세트를 청크로 나누고 인스턴스에 배포 → 병렬 처리 지원 유형 ① 데이터(로컬 히스토그램) ② 피쳐 ③ 투표 (Dask는 ①과 ③만 지원), 인스턴스는 Dask 클러스터(Dask 스케줄러 1대 + 작업자 여러 대)를 구성
     * CSV 또는 Parquet 형식의 복수 개 파일 지원, 범주형은 JSON 파일로 제공, 인스턴스 > 1로 설정 시 병렬 처리 자동 적용
@@ -172,7 +172,7 @@
     * 스케일링 계획 ① 애플리케이션 특성 식별: `Inference Recommender` 기본 작업 통한 벤치마킹 (포화 상태까지 요청 증대) → 결과 분석 → 스케일링 한계 탐색 (가용성 vs. 비용으로 결정, 가용성 최적화 시 40%, 비용 최적화 시 70%, 균형점 50%) ② 스케일링 가정 설정 (최대 요청 수, 트래픽 패턴) ③ 적용과 평가: `Inference Recommender` 고급 작업으로 수행 → 대상 추적 (`InvocationsPerInstance`으로, 쿨다운 값 입력)과 평가 → 단계 별 스케일링과 평가 
     * 튜닝: 예약된 스케일링 정책 조합도 고려, 스케일 아웃 대신 업도 고려, 사용자 지표 정의 가능, 스케일링 알람 조정
 * [Scaling LLM Training with **Amazon EC2 Trn1 UltraClusters** (Feb 2023)](https://aws.amazon.com/blogs/machine-learning/scaling-large-language-model-llm-training-with-amazon-ec2-trn1-ultraclusters/)
-* [농심의 **Amazon SageMaker**를 활용한 원자재 가격예측과 MLOps 여정](https://aws.amazon.com/ko/blogs/tech/nongshim-amazon-sagemaker-material-forecast-mlops/)
+* [농심의 **Amazon SageMaker**를 활용한 원자재 가격예측과 MLOps 여정 (Feb 2023)](https://aws.amazon.com/ko/blogs/tech/nongshim-amazon-sagemaker-material-forecast-mlops/)
 * [AWS를 이용한 MLOps 구축 사례 살펴보기 (Jan 2023)](https://aws.amazon.com/ko/blogs/tech/aws-mlops-use-case/)
 * [Best Practices for Load Testing **Amazon SageMaker** Real-Time Inference Endpoints (Jan 2023)](https://aws.amazon.com/blogs/machine-learning/best-practices-for-load-testing-amazon-sagemaker-real-time-inference-endpoints/)
     * 모델 엔드포인트에 대해 레이턴시 준수하면서 목표 TPS(예: 1000) 달성해야 함
