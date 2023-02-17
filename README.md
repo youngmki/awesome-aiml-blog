@@ -172,6 +172,7 @@
     * 스케일링 계획 ① 애플리케이션 특성 식별: `Inference Recommender` 기본 작업 통한 벤치마킹 (포화 상태까지 요청 증대) → 결과 분석 → 스케일링 한계 탐색 (가용성 vs. 비용으로 결정, 가용성 최적화 시 40%, 비용 최적화 시 70%, 균형점 50%) ② 스케일링 가정 설정 (최대 요청 수, 트래픽 패턴) ③ 적용과 평가: `Inference Recommender` 고급 작업으로 수행 → 대상 추적 (`InvocationsPerInstance`으로, 쿨다운 값 입력)과 평가 → 단계 별 스케일링과 평가 
     * 튜닝: 예약된 스케일링 정책 조합도 고려, 스케일 아웃 대신 업도 고려, 사용자 지표 정의 가능, 스케일링 알람 조정
 * [Scaling LLM Training with **Amazon EC2 Trn1 UltraClusters** (Feb 2023)](https://aws.amazon.com/blogs/machine-learning/scaling-large-language-model-llm-training-with-amazon-ec2-trn1-ultraclusters/)
+* [농심의 **Amazon SageMaker**를 활용한 원자재 가격예측과 MLOps 여정](https://aws.amazon.com/ko/blogs/tech/nongshim-amazon-sagemaker-material-forecast-mlops/)
 * [AWS를 이용한 MLOps 구축 사례 살펴보기 (Jan 2023)](https://aws.amazon.com/ko/blogs/tech/aws-mlops-use-case/)
 * [Best Practices for Load Testing **Amazon SageMaker** Real-Time Inference Endpoints (Jan 2023)](https://aws.amazon.com/blogs/machine-learning/best-practices-for-load-testing-amazon-sagemaker-real-time-inference-endpoints/)
     * 모델 엔드포인트에 대해 레이턴시 준수하면서 목표 TPS(예: 1000) 달성해야 함
